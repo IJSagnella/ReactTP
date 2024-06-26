@@ -1,0 +1,10 @@
+.carta-pedido {
+    width: 18rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.list-group {
+    padding-right: 0 !important;
+}
