@@ -1,0 +1,30 @@
+.container-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.informacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-content {
+    width: 700px !important;
+}
+
+.texto-informativo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.lista-informacion {
+    width: 500px;
+}
+
+.btn-detalle {
+    cursor: pointer;
+}
