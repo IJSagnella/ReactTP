@@ -1,5 +1,6 @@
 import '../css/Nav.css';
 
+
 export const Nav = () => {
 
     return(
@@ -12,7 +13,13 @@ export const Nav = () => {
               <form className="d-inline-flex mx-auto my-2">
               </form>
               <ul className="navbar-nav">
-                  <li className="nav-item dropdown">
+                <li className="nav-item dropdown">
+                    
+                    <img className="icono-perfil" src="src/assets/gente.png" alt="Perfil" />
+                    <a className="navbar-text" href="http://localhost:5173/login">Iniciar Sesion</a>
+                </li>
+                  {/*
+                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <img className="icono-perfil" src="src/assets/gente.png" alt="Perfil" />
                           <span>Elizabeth Sanchez</span>
@@ -22,6 +29,7 @@ export const Nav = () => {
                           <a className="dropdown-item" href="#">Cerrar Sesion</a>
                       </div>
                   </li>
+                  */}
               </ul>
           </div>
       </nav>
