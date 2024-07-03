@@ -14,7 +14,7 @@ export const Nav = () => {
               <ul className="navbar-nav">
                   <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <img className="icono-perfil" src="src/assets/gente.png" alt="Perfil" />
+                          <img className="icono-perfil" src="../icons/gente.png" alt="Perfil" />
                           <span>Elizabeth Sanchez</span>
                       </a>
                       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
