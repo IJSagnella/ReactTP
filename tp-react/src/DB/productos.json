@@ -1,0 +1,34 @@
+{
+    "lista":[
+        {
+          "codigo": "TV",
+          "descripcion": "Television, Monitores, Pantallas",
+          "valor": "20000"
+        },
+        {
+            "codigo": "CP",
+            "descripcion": "Cuidado Personal (Afeitadoras, Depiladoras)",
+            "valor": "3000"
+          },
+          {
+            "codigo": "CO",
+            "descripcion": "Cocina (Licuadoras, Procesadoras, Batidoras, etc.)",
+            "valor": "10000"
+          },
+          {
+            "codigo": "CA",
+            "descripcion": "Cafeteras (filtro, express), Espumadoras, Moliendas, etc.",
+            "valor": "15000"
+          },
+          {
+            "codigo": "AU",
+            "descripcion": "Equipos de Audio, Parlantes, Auriculares, etc.",
+            "valor": "15000"
+          },
+          {
+            "codigo": "HR",
+            "descripcion": "Herramientas electricas",
+            "valor": "20000"
+          }
+      ]
+}

@@ -1,0 +1,185 @@
+{
+    "lista" : 
+    [
+        {
+            "codigo": "001",
+            "nombre": "Teleservice Central",
+            "provincia": "Buenos Aires",
+            "localidad": "La Plata",
+            "direccion": "Av. 13 1234",
+            "email": "contacto@teleservice.com",
+            "telefono": "011-4567-8901",
+            "horarios": {
+                "Lunes": "09:00-18:00",
+                "Martes": "09:00-18:00",
+                "Miercoles": "09:00-18:00",
+                "Jueves": "09:00-18:00",
+                "Viernes": "09:00-18:00",
+                "Sabado": "10:00-14:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "002",
+            "nombre": "Teleservice Córdoba Capital",
+            "provincia": "Córdoba",
+            "localidad": "Córdoba Capital",
+            "direccion": "Calle Independencia 456",
+            "email": "info@teleservice.com",
+            "telefono": "0351-234-5678",
+            "horarios": {
+                "Lunes": "08:00-17:00",
+                "Martes": "08:00-17:00",
+                "Miercoles": "08:00-17:00",
+                "Jueves": "08:00-17:00",
+                "Viernes": "08:00-17:00",
+                "Sabado": "09:00-13:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "003",
+            "nombre": "Teleservice Rosario",
+            "provincia": "Santa Fe",
+            "localidad": "Rosario",
+            "direccion": "Av. Pellegrini 789",
+            "email": "servicio@teleservice.com",
+            "telefono": "0341-987-6543",
+            "horarios": {
+                "Lunes": "10:00-19:00",
+                "Martes": "10:00-19:00",
+                "Miercoles": "10:00-19:00",
+                "Jueves": "10:00-19:00",
+                "Viernes": "10:00-19:00",
+                "Sabado": "09:00-14:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "004",
+            "nombre": "Teleservice Mendoza Capital",
+            "provincia": "Mendoza",
+            "localidad": "Mendoza Capital",
+            "direccion": "Calle San Martin 321",
+            "email": "soporte@teleservice.com",
+            "telefono": "0261-321-6547",
+            "horarios": {
+                "Lunes": "08:30-18:30",
+                "Martes": "08:30-18:30",
+                "Miercoles": "08:30-18:30",
+                "Jueves": "08:30-18:30",
+                "Viernes": "08:30-18:30",
+                "Sabado": "09:00-13:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "005",
+            "nombre": "Teleservice San Juan Capital",
+            "provincia": "San Juan",
+            "localidad": "San Juan Capital",
+            "direccion": "Calle Mitre 456",
+            "email": "ayuda@teleservice.com",
+            "telefono": "0264-987-1234",
+            "horarios": {
+                "Lunes": "09:00-17:00",
+                "Martes": "09:00-17:00",
+                "Miercoles": "09:00-17:00",
+                "Jueves": "09:00-17:00",
+                "Viernes": "09:00-17:00",
+                "Sabado": "09:00-13:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "006",
+            "nombre": "Teleservice Mar del Plata",
+            "provincia": "Buenos Aires",
+            "localidad": "Mar del Plata",
+            "direccion": "Av. Colón 123",
+            "email": "contacto@teleservice.com",
+            "telefono": "0223-456-7890",
+            "horarios": {
+                "Lunes": "09:00-18:00",
+                "Martes": "09:00-18:00",
+                "Miercoles": "09:00-18:00",
+                "Jueves": "09:00-18:00",
+                "Viernes": "09:00-18:00",
+                "Sabado": "10:00-14:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "007",
+            "nombre": "Teleservice Paraná",
+            "provincia": "Entre Ríos",
+            "localidad": "Paraná",
+            "direccion": "Calle Urquiza 789",
+            "email": "info@teleservice.com",
+            "telefono": "0343-234-5678",
+            "horarios": {
+                "Lunes": "08:00-17:00",
+                "Martes": "08:00-17:00",
+                "Miercoles": "08:00-17:00",
+                "Jueves": "08:00-17:00",
+                "Viernes": "08:00-17:00",
+                "Sabado": "09:00-13:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "008",
+            "nombre": "Teleservice Neuquén Capital",
+            "provincia": "Neuquén",
+            "localidad": "Neuquén Capital",
+            "direccion": "Av. Argentina 321",
+            "email": "soporte@teleservice.com",
+            "telefono": "0299-321-6547",
+            "horarios": {
+                "Lunes": "08:30-18:30",
+                "Martes": "08:30-18:30",
+                "Miercoles": "08:30-18:30",
+                "Jueves": "08:30-18:30",
+                "Viernes": "08:30-18:30",
+                "Sabado": "09:00-13:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "009",
+            "nombre": "Teleservice Bariloche",
+            "provincia": "Río Negro",
+            "localidad": "Bariloche",
+            "direccion": "Calle Mitre 123",
+            "email": "ayuda@teleservice.com",
+            "telefono": "0294-987-1234",
+            "horarios": {
+                "Lunes": "09:00-17:00",
+                "Martes": "09:00-17:00",
+                "Miercoles": "09:00-17:00",
+                "Jueves": "09:00-17:00",
+                "Viernes": "09:00-17:00",
+                "Sabado": "09:00-13:00",
+                "Domingo": "Cerrado"
+            }
+        },
+        {
+            "codigo": "010",
+            "nombre": "Teleservice Trelew",
+            "provincia": "Chubut",
+            "localidad": "Trelew",
+            "direccion": "Calle Fontana 456",
+            "email": "contacto@teleservice.com",
+            "telefono": "0280-456-7890",
+            "horarios": {
+                "Lunes": "09:00-18:00",
+                "Martes": "09:00-18:00",
+                "Miercoles": "09:00-18:00",
+                "Jueves": "09:00-18:00",
+                "Viernes": "09:00-18:00",
+                "Sabado": "10:00-14:00",
+                "Domingo": "Cerrado"
+            }
+        }
+    ]
+}   
