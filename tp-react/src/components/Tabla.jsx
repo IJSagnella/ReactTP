@@ -1,39 +1,8 @@
 import '../css/Tabla.css';
-import { HeaderTabla } from '../components/HeaderTabla';
-import { BodyTabla } from '../components/BodyTabla';
+
 
 export const Tabla = ({ columnas, lista }) => {
 
-    const formatearColumnas = () => {
-        
-        let ths = "";
-
-        columnas.forEach((element) => {
-            ths = ths + element.label;
-        });
-
-        return ths;
-
-    };
-
-    const completoTabla = () => {
-
-        let trs = "";
-
-        lista.forEach((element) => {
-
-            let tds = "";
-
-            columnas.forEach((col) => {
-                tds = tds + "<td>"+element[col.db]+"</td>";
-            });
-            
-            trs = "<tr>" + tds + "</tr>";
-        });
-
-        return trs;
-
-    };
 
     return(
         <div className="container">
@@ -43,14 +12,23 @@ export const Tabla = ({ columnas, lista }) => {
                         <thead>
                             <tr>
                                 { 
-                                columnas.forEach((element) => {
-                                    <HeaderTabla valor={element.label} />
-                                }) 
+                                columnas.map( (columna, i) =>{
+                                    return (<th key={i}>{columna.label}</th>)
+                                    })
                                 }
                             </tr>
                         </thead>
                         <tbody>
-
+                                { 
+                                lista.map( (item, i) =>{
+                                    return (<tr key={i}>
+                                        {
+                                        columnas.map( (columna, i) =>{
+                                        return (<td key={i}>{item[columna.db]}</td>)
+                                        })}
+                                    </tr>)
+                                    })
+                                }
                         </tbody>
                     </table>
                 </div>

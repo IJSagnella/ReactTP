@@ -6,12 +6,12 @@ export const Sucursales = () => {
 
     const columnas = [
         {"label": "Nombre", "db": "nombre"},
-        {"label": "Codigo", "db": "nombre"},
-        {"label": "Provincia", "db": "nombre"},
-        {"label": "Localidad", "db": "nombre"},
-        {"label": "Direccion", "db": "nombre"},
-        {"label": "Correo Electronico", "db": "nombre"},
-        {"label": "Teléfono", "db": "nombre"},
+        {"label": "Codigo", "db": "codigo"},
+        {"label": "Provincia", "db": "provincia"},
+        {"label": "Localidad", "db": "localidad"},
+        {"label": "Direccion", "db": "direccion"},
+        {"label": "Correo Electronico", "db": "email"},
+        {"label": "Teléfono", "db": "telefono"},
         ];
 
     return(

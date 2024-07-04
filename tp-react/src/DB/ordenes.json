@@ -1,0 +1,477 @@
+{
+    "lista":[
+        {
+            "numero": "001",
+            "estado": "pendiente",
+            "sucursal": "sucursal 1",
+            "creacion": "2024-07-01",
+            "modificacion": "2024-07-02",
+            "producto": {
+                "marca": "Oster",
+                "modelo": "OS1234",
+                "numero_de_serie": "123456",
+                "tipo_de_producto": "cafeteria",
+                "condicion_del_producto": "nuevo",
+                "accesorios_incluidos": "cargador, manual",
+                "defecto_declarado": "no enciende"
+            },
+            "cliente": {
+                "nombre": "juan",
+                "apellido": "pérez",
+                "dni": "12345678",
+                "localidad": "ciudad Z",
+                "direccion": "calle falsa 123",
+                "telefono": "123-456-7890",
+                "mail": "juan.perez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "recepción",
+                    "fecha": "2024-07-01",
+                    "descripcion": "producto recibido para diagnóstico"
+                },
+                {
+                    "accion": "entrega",
+                    "fecha": "2024-07-10",
+                    "descripcion": "producto entregado al cliente"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "cambio de placa base",
+                "precio_del_trabajo": "150.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-03",
+                    "repuesto": "placa base",
+                    "cantidad": 1,
+                    "estado": "pendiente de entrega"
+                }
+            ]
+        },
+        {
+            "numero": "002",
+            "estado": "completado",
+            "sucursal": "sucursal 2",
+            "creacion": "2024-07-01",
+            "modificacion": "2024-07-03",
+            "producto": {
+                "marca": "Philips",
+                "modelo": "PH5678",
+                "numero_de_serie": "654321",
+                "tipo_de_producto": "cuidado personal",
+                "condicion_del_producto": "usado",
+                "accesorios_incluidos": "ninguno",
+                "defecto_declarado": "no calienta"
+            },
+            "cliente": {
+                "nombre": "maría",
+                "apellido": "gómez",
+                "dni": "87654321",
+                "localidad": "ciudad Y",
+                "direccion": "avenida siempreviva 742",
+                "telefono": "098-765-4321",
+                "mail": "maria.gomez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "diagnóstico",
+                    "fecha": "2024-07-01",
+                    "descripcion": "diagnóstico completado"
+                },
+                {
+                    "accion": "entrega",
+                    "fecha": "2024-07-05",
+                    "descripcion": "producto entregado al cliente"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "reemplazo de termostato",
+                "precio_del_trabajo": "50.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-02",
+                    "repuesto": "termostato",
+                    "cantidad": 1,
+                    "estado": "entregado"
+                }
+            ]
+        },
+        {
+            "numero": "003",
+            "estado": "en proceso",
+            "sucursal": "sucursal 3",
+            "creacion": "2024-07-02",
+            "modificacion": "2024-07-03",
+            "producto": {
+                "marca": "Hitachi",
+                "modelo": "HT3456",
+                "numero_de_serie": "789012",
+                "tipo_de_producto": "tv",
+                "condicion_del_producto": "nuevo",
+                "accesorios_incluidos": "control remoto",
+                "defecto_declarado": "pantalla no se enciende"
+            },
+            "cliente": {
+                "nombre": "carlos",
+                "apellido": "lópez",
+                "dni": "23456789",
+                "localidad": "ciudad X",
+                "direccion": "calle principal 456",
+                "telefono": "321-654-0987",
+                "mail": "carlos.lopez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "recepción",
+                    "fecha": "2024-07-02",
+                    "descripcion": "producto recibido para diagnóstico"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "pendiente de diagnóstico",
+                "precio_del_trabajo": "0.00"
+            },
+            "pedidos": []
+        },
+        {
+            "numero": "004",
+            "estado": "pendiente",
+            "sucursal": "sucursal 4",
+            "creacion": "2024-07-03",
+            "modificacion": "2024-07-04",
+            "producto": {
+                "marca": "Liliana",
+                "modelo": "LI7890",
+                "numero_de_serie": "345678",
+                "tipo_de_producto": "cocina",
+                "condicion_del_producto": "nuevo",
+                "accesorios_incluidos": "manual, soporte",
+                "defecto_declarado": "no funciona"
+            },
+            "cliente": {
+                "nombre": "ana",
+                "apellido": "martínez",
+                "dni": "34567890",
+                "localidad": "ciudad W",
+                "direccion": "calle secundaria 789",
+                "telefono": "432-109-8765",
+                "mail": "ana.martinez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "recepción",
+                    "fecha": "2024-07-03",
+                    "descripcion": "producto recibido para diagnóstico"
+                },
+                {
+                    "accion": "entrega",
+                    "fecha": "2024-07-15",
+                    "descripcion": "producto entregado al cliente"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "reparación de cableado",
+                "precio_del_trabajo": "30.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-04",
+                    "repuesto": "cableado",
+                    "cantidad": 1,
+                    "estado": "pendiente de entrega"
+                }
+            ]
+        },
+        {
+            "numero": "005",
+            "estado": "completado",
+            "sucursal": "sucursal 5",
+            "creacion": "2024-07-02",
+            "modificacion": "2024-07-05",
+            "producto": {
+                "marca": "Noblex",
+                "modelo": "NO9012",
+                "numero_de_serie": "567890",
+                "tipo_de_producto": "tv",
+                "condicion_del_producto": "usado",
+                "accesorios_incluidos": "control remoto, soporte",
+                "defecto_declarado": "imagen distorsionada"
+            },
+            "cliente": {
+                "nombre": "lucas",
+                "apellido": "fernández",
+                "dni": "45678901",
+                "localidad": "ciudad V",
+                "direccion": "calle tercera 321",
+                "telefono": "543-210-9876",
+                "mail": "lucas.fernandez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "diagnóstico",
+                    "fecha": "2024-07-02",
+                    "descripcion": "diagnóstico completado"
+                },
+                {
+                    "accion": "entrega",
+                    "fecha": "2024-07-06",
+                    "descripcion": "producto entregado al cliente"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "reemplazo de pantalla",
+                "precio_del_trabajo": "100.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-03",
+                    "repuesto": "pantalla",
+                    "cantidad": 1,
+                    "estado": "entregado"
+                }
+            ]
+        },
+        {
+            "numero": "006",
+            "estado": "pendiente",
+            "sucursal": "sucursal 6",
+            "creacion": "2024-07-03",
+            "modificacion": "2024-07-05",
+            "producto": {
+                "marca": "Oster",
+                "modelo": "OS3456",
+                "numero_de_serie": "678901",
+                "tipo_de_producto": "cafeteria",
+                "condicion_del_producto": "nuevo",
+                "accesorios_incluidos": "manual, filtro",
+                "defecto_declarado": "no calienta"
+            },
+            "cliente": {
+                "nombre": "santiago",
+                "apellido": "gonzález",
+                "dni": "56789012",
+                "localidad": "ciudad U",
+                "direccion": "calle cuarta 654",
+                "telefono": "654-321-0987",
+                "mail": "santiago.gonzalez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "recepción",
+                    "fecha": "2024-07-03",
+                    "descripcion": "producto recibido para diagnóstico"
+                },
+                {
+                    "accion": "entrega",
+                    "fecha": "2024-07-17",
+                    "descripcion": "producto entregado al cliente"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "reemplazo de elemento calefactor",
+                "precio_del_trabajo": "40.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-04",
+                    "repuesto": "elemento calefactor",
+                    "cantidad": 1,
+                    "estado": "pendiente de entrega"
+                }
+            ]
+        },
+        {
+            "numero": "007",
+            "estado": "completado",
+            "sucursal": "sucursal 7",
+            "creacion": "2024-07-04",
+            "modificacion": "2024-07-06",
+            "producto": {
+                "marca": "Philips",
+                "modelo": "PH7890",
+                "numero_de_serie": "789123",
+                "tipo_de_producto": "cuidado personal",
+                "condicion_del_producto": "usado",
+                "accesorios_incluidos": "ninguno",
+                "defecto_declarado": "no funciona"
+            },
+            "cliente": {
+                "nombre": "valeria",
+                "apellido": "suárez",
+                "dni": "67890123",
+                "localidad": "ciudad T",
+                "direccion": "calle quinta 987",
+                "telefono": "765-432-1098",
+                "mail": "valeria.suarez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "diagnóstico",
+                    "fecha": "2024-07-04",
+                    "descripcion": "diagnóstico completado"
+                },
+                {
+                    "accion": "entrega",
+                    "fecha": "2024-07-08",
+                    "descripcion": "producto entregado al cliente"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "reparación de motor",
+                "precio_del_trabajo": "60.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-05",
+                    "repuesto": "motor",
+                    "cantidad": 1,
+                    "estado": "entregado"
+                }
+            ]
+        },
+        {
+            "numero": "008",
+            "estado": "pendiente",
+            "sucursal": "sucursal 8",
+            "creacion": "2024-07-04",
+            "modificacion": "2024-07-06",
+            "producto": {
+                "marca": "Hitachi",
+                "modelo": "HT9012",
+                "numero_de_serie": "890123",
+                "tipo_de_producto": "tv",
+                "condicion_del_producto": "nuevo",
+                "accesorios_incluidos": "control remoto, cable HDMI",
+                "defecto_declarado": "no se conecta a internet"
+            },
+            "cliente": {
+                "nombre": "martín",
+                "apellido": "rodríguez",
+                "dni": "78901234",
+                "localidad": "ciudad S",
+                "direccion": "calle sexta 123",
+                "telefono": "876-543-2109",
+                "mail": "martin.rodriguez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "recepción",
+                    "fecha": "2024-07-04",
+                    "descripcion": "producto recibido para diagnóstico"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "reparación de tarjeta de red",
+                "precio_del_trabajo": "80.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-05",
+                    "repuesto": "tarjeta de red",
+                    "cantidad": 1,
+                    "estado": "pendiente de entrega"
+                }
+            ]
+        },
+        {
+            "numero": "009",
+            "estado": "completado",
+            "sucursal": "sucursal 9",
+            "creacion": "2024-07-05",
+            "modificacion": "2024-07-07",
+            "producto": {
+                "marca": "Liliana",
+                "modelo": "LI1234",
+                "numero_de_serie": "901234",
+                "tipo_de_producto": "cocina",
+                "condicion_del_producto": "usado",
+                "accesorios_incluidos": "manual",
+                "defecto_declarado": "no calienta"
+            },
+            "cliente": {
+                "nombre": "marcos",
+                "apellido": "garcía",
+                "dni": "89012345",
+                "localidad": "ciudad R",
+                "direccion": "calle séptima 456",
+                "telefono": "987-654-3210",
+                "mail": "marcos.garcia@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "diagnóstico",
+                    "fecha": "2024-07-05",
+                    "descripcion": "diagnóstico completado"
+                },
+                {
+                    "accion": "entrega",
+                    "fecha": "2024-07-09",
+                    "descripcion": "producto entregado al cliente"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "reemplazo de quemadores",
+                "precio_del_trabajo": "70.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-06",
+                    "repuesto": "quemadores",
+                    "cantidad": 2,
+                    "estado": "entregado"
+                }
+            ]
+        },
+        {
+            "numero": "010",
+            "estado": "pendiente",
+            "sucursal": "sucursal 10",
+            "creacion": "2024-07-05",
+            "modificacion": "2024-07-07",
+            "producto": {
+                "marca": "Noblex",
+                "modelo": "NO5678",
+                "numero_de_serie": "012345",
+                "tipo_de_producto": "tv",
+                "condicion_del_producto": "nuevo",
+                "accesorios_incluidos": "control remoto, manual",
+                "defecto_declarado": "sin señal"
+            },
+            "cliente": {
+                "nombre": "elena",
+                "apellido": "domínguez",
+                "dni": "90123456",
+                "localidad": "ciudad Q",
+                "direccion": "calle octava 789",
+                "telefono": "098-765-4321",
+                "mail": "elena.dominguez@example.com"
+            },
+            "eventos": [
+                {
+                    "accion": "recepción",
+                    "fecha": "2024-07-05",
+                    "descripcion": "producto recibido para diagnóstico"
+                },
+                {
+                    "accion": "entrega",
+                    "fecha": "2024-07-12",
+                    "descripcion": "producto entregado al cliente"
+                }
+            ],
+            "reparacion": {
+                "trabajo_realizado": "reparación de antena",
+                "precio_del_trabajo": "20.00"
+            },
+            "pedidos": [
+                {
+                    "fecha": "2024-07-06",
+                    "repuesto": "antena",
+                    "cantidad": 1,
+                    "estado": "pendiente de entrega"
+                }
+            ]
+        }
+    ]
+}

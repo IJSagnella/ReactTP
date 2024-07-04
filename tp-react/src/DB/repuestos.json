@@ -1,0 +1,75 @@
+{
+    "lista":
+    [
+        {
+          "codigo": "REP001",
+          "descripcion": "Filtro de agua para cafetera PHILIPS",
+          "estado": "Disponible",
+          "precio": 1200.50,
+          "cantidad": 25
+        },
+        {
+          "codigo": "REP002",
+          "descripcion": "Termostato para horno",
+          "estado": "Disponible",
+          "precio": 850.75,
+          "cantidad": 15
+        },
+        {
+          "codigo": "REP003",
+          "descripcion": "Resistencia para calefactor",
+          "estado": "Descontinuado",
+          "precio": 950.00,
+          "cantidad": 0
+        },
+        {
+          "codigo": "REP004",
+          "descripcion": "Motor para batidora",
+          "estado": "Disponible",
+          "precio": 4500.99,
+          "cantidad": 8
+        },
+        {
+          "codigo": "REP005",
+          "descripcion": "Tapa para microondas",
+          "estado": "Disponible",
+          "precio": 300.00,
+          "cantidad": 50
+        },
+        {
+          "codigo": "REP006",
+          "descripcion": "Bomba de agua para cafetera OSTER",
+          "estado": "Disponible",
+          "precio": 2200.40,
+          "cantidad": 12
+        },
+        {
+          "codigo": "REP007",
+          "descripcion": "Mando a distancia para TV NOBLEX",
+          "estado": "Descontinuado",
+          "precio": 600.00,
+          "cantidad": 0
+        },
+        {
+          "codigo": "REP008",
+          "descripcion": "Placa t-com para tv",
+          "estado": "Disponible",
+          "precio": 3200.75,
+          "cantidad": 7
+        },
+        {
+          "codigo": "REP009",
+          "descripcion": "Cuchilla de afeitadora QR567",
+          "estado": "Disponible",
+          "precio": 150.30,
+          "cantidad": 100
+        },
+        {
+          "codigo": "REP010",
+          "descripcion": "Cuchilla de licuadora HR4500",
+          "estado": "Disponible",
+          "precio": 450.20,
+          "cantidad": 30
+        }
+      ]
+}
