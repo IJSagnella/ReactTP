@@ -15,7 +15,7 @@ export const CardOrden = ({ numero, estado, producto, sucursal, cliente, creacio
                             { numero }
                             </div>
                             <div className='mb-0 font-weight-bold text-gray-800'>
-                            { estado }
+                                <span className="badge text-bg-success">{ estado }</span>
                             </div>
                         </div>
                         <div className="col">
