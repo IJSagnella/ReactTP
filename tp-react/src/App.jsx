@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //importo las Paginas
 import { Inicio } from './pages/Inicio'
@@ -16,18 +16,22 @@ import { OrdenInfo } from './pages/empleado/OrdenInfo'
 import { Resumen } from './pages/empleado/Resumen'
 import { Pedidos } from './pages/empleado/Pedidos'
 import { Envios } from './pages/empleado/Envios'
+
 //Menu
+
 import { Nav } from './components/Nav'
 import { Footer } from './components/Footer'
-//import { Layout } from './components/Layout'
+import { Layout } from './components/Layout'
+//Contextos
 
 import { AuthProvider } from './context/AuthContext'
 
 export const App = () => {
 
   return (
+
+    <Router>
     <AuthProvider>
-    <BrowserRouter>
     <Nav/>
       <Routes>
         <Route path= '/' element={<Inicio/>} />
@@ -46,8 +50,8 @@ export const App = () => {
         <Route path= '/empleado/envios' element={<Envios/>} />
       </Routes>
     <Footer/>
-    </BrowserRouter>
     </AuthProvider>
+    </Router>
   )
 }
 export default App

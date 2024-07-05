@@ -4,6 +4,7 @@ import { Pedidos } from '../components/Pedidos';
 export const Consulta = () => {
     
     return(
+        <>
     <div className="container mt-4"> 
         <div className="row d-flex justify-content-center"> 
             <div className="col-md-9"> 
@@ -21,5 +22,6 @@ export const Consulta = () => {
         </div> 
         <Pedidos/>
     </div>
+    </>
     )
 }

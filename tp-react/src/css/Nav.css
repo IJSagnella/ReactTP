@@ -6,3 +6,8 @@
 .nav-link {
     padding: 0;
 }
+
+.navbar-text :hover{
+
+    color: rgb(72, 185, 223) !important;
+}

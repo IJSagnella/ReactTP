@@ -17,10 +17,6 @@ export const Pedidos = () => {
                 <li className="list-group-item">011-4444-1234</li>
                 <li className="list-group-item">16:00 a 18:00</li>
             </ul>
-            <div className="card-body">
-                <a href="#" className="card-link">Ver pedido</a>
-                <a href="#" className="card-link">Consultas</a>
-            </div>
         </div>
         </>
     )

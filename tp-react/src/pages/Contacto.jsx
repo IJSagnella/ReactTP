@@ -21,12 +21,12 @@ export const Contacto = () => {
             <ul className="list-group">
             <li href="#" className="list-group-item flex-column align-items-start">
                 <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Electro Service S.A.</h5>
+                <h5 className="mb-1">Teleservice Sucural Quilmes</h5>
                 <small>Servicio</small>
                 </div>
                 <div className="texto-informativo">
-                    <p className="mb-1">Locales comerciales Santo Domingo</p>
-                    <p className="mb-1">César - Valledupar</p>
+                    <p className="mb-1">Local Alberdi 296, Quilmes Centro.</p>
+                    <p className="mb-1">teleservicequilmes@gmail.com  |  4253-9255</p>
                     <a className="mt-3 mb-2 btn-detalle" id="list-home-list" data-toggle="list" onClick={onClick}>Mas detalle</a>
                 </div>
                 { showResults ?
@@ -45,12 +45,12 @@ export const Contacto = () => {
             </li>
             <li href="#" className="list-group-item flex-column align-items-start">
                 <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Centenario Hogar</h5>
+                <h5 className="mb-1">Teleservice Sucursal Lomas de Zamora</h5>
                 <small>Servicio</small>
                 </div>
                 <div className="texto-informativo">
-                    <p className="mb-1">Avenida 30 de agosto</p>
-                    <p className="mb-1">Risaralda - Pereira</p>
+                    <p className="mb-1">Fonrouge 410, Lomas de Zamora</p>
+                    <p className="mb-1">teleservicelomas@gmail.com  |  6066-4712</p>
                     <a className="mt-3 mb-2 btn-detalle" id="list-profile-list" data-toggle="list" onClick={onClick2}>Mas detalle</a>
                 </div>
                 { showResults2 ?
@@ -69,12 +69,12 @@ export const Contacto = () => {
             </li>
             <li href="#" className="list-group-item flex-column align-items-start">
                 <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Servicentro del Parque</h5>
+                <h5 className="mb-1">Teleservice Sucursal Villa del Parque</h5>
                 <small>Servicio</small>
                 </div>
                 <div className="texto-informativo">
-                    <p className="mb-1">Local 18 Centro Comercial Altavista</p>
-                    <p className="mb-1">Quindio - Armenia</p>
+                    <p className="mb-1">Av. Nazca 2701, Cdad. Autónoma de Buenos Aires</p>
+                    <p className="mb-1">teleserviceparque@gmail.com  |  6666-4757</p>
                     <a className="mt-3 mb-2 btn-detalle" id="list-messages-list" data-toggle="list" onClick={onClick3}>Mas detalle</a>
                 </div>
                 { showResults3 ?
@@ -96,5 +96,6 @@ export const Contacto = () => {
         </div>
     </div>
     </>
+
     )
 }
