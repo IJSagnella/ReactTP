@@ -45,7 +45,7 @@ export const Inicio = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="p-5 mt-4">
-                            <h1 className="display-4">Bienvenido a Telerservice</h1>
+                            <h1 className="display-4">Bienvenido a Teleservice</h1>
                             <p className="lead">Somo un servicio técnico electronico, brindamos una mayor comodidad y puntualidad a nuestros clientes, solucionando cualquier desperfecto técnico, ya sea dentro o fuera de la garantiá.
                                 Contamos con una alta gama de marcas y reparamos desde electrodomesticos, televisores hasta accesorios!.
                             </p>
