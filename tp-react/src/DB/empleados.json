@@ -1,0 +1,124 @@
+{
+    "lista":[
+        {
+          "nombres": "Juan",
+          "apellidos": "Pérez",
+          "rol": "Administrador",
+          "sucursal": "Buenos Aires",
+          "fecha_de_nacimiento": "1980-05-15",
+          "domicilio": "Av. Siempre Viva 742, Buenos Aires",
+          "mail": "juan.perez@example.com",
+          "teléfono": "+54 11 1234-5678",
+          "fecha_de_alta": "2020-01-10",
+          "fecha_de_baja": null
+        },
+        {
+          "nombres": "María",
+          "apellidos": "Gómez",
+          "rol": "Sucursal",
+          "sucursal": "Córdoba",
+          "fecha_de_nacimiento": "1990-08-25",
+          "domicilio": "Calle Falsa 123, Córdoba",
+          "mail": "maria.gomez@example.com",
+          "teléfono": "+54 351 123-4567",
+          "fecha_de_alta": "2019-03-14",
+          "fecha_de_baja": "2023-06-30"
+        },
+        {
+          "nombres": "Carlos",
+          "apellidos": "López",
+          "rol": "Deposito",
+          "sucursal": "Rosario",
+          "fecha_de_nacimiento": "1985-12-10",
+          "domicilio": "Boulevard Oroño 300, Rosario",
+          "mail": "carlos.lopez@example.com",
+          "teléfono": "+54 341 987-6543",
+          "fecha_de_alta": "2018-07-22",
+          "fecha_de_baja": null
+        },
+        {
+          "nombres": "Ana",
+          "apellidos": "Martínez",
+          "rol": "Administrador",
+          "sucursal": "Mendoza",
+          "fecha_de_nacimiento": "1992-11-05",
+          "domicilio": "Calle San Martín 500, Mendoza",
+          "mail": "ana.martinez@example.com",
+          "teléfono": "+54 261 123-7890",
+          "fecha_de_alta": "2021-02-18",
+          "fecha_de_baja": null
+        },
+        {
+          "nombres": "Jorge",
+          "apellidos": "Fernández",
+          "rol": "Sucursal",
+          "sucursal": "La Plata",
+          "fecha_de_nacimiento": "1987-03-20",
+          "domicilio": "Calle 12 345, La Plata",
+          "mail": "jorge.fernandez@example.com",
+          "teléfono": "+54 221 456-7890",
+          "fecha_de_alta": "2017-09-12",
+          "fecha_de_baja": null
+        },
+        {
+          "nombres": "Lucía",
+          "apellidos": "González",
+          "rol": "Deposito",
+          "sucursal": "Mar del Plata",
+          "fecha_de_nacimiento": "1995-07-30",
+          "domicilio": "Av. Colón 1000, Mar del Plata",
+          "mail": "lucia.gonzalez@example.com",
+          "teléfono": "+54 223 567-8901",
+          "fecha_de_alta": "2022-06-05",
+          "fecha_de_baja": null
+        },
+        {
+          "nombres": "Diego",
+          "apellidos": "Ramírez",
+          "rol": "Administrador",
+          "sucursal": "Salta",
+          "fecha_de_nacimiento": "1989-01-15",
+          "domicilio": "Calle Mitre 200, Salta",
+          "mail": "diego.ramirez@example.com",
+          "teléfono": "+54 387 345-6789",
+          "fecha_de_alta": "2020-11-21",
+          "fecha_de_baja": null
+        },
+        {
+          "nombres": "Sofía",
+          "apellidos": "Herrera",
+          "rol": "Sucursal",
+          "sucursal": "Santa Fe",
+          "fecha_de_nacimiento": "1993-04-18",
+          "domicilio": "Calle San Jerónimo 1500, Santa Fe",
+          "mail": "sofia.herrera@example.com",
+          "teléfono": "+54 342 678-9012",
+          "fecha_de_alta": "2016-05-17",
+          "fecha_de_baja": "2022-10-10"
+        },
+        {
+          "nombres": "Fernando",
+          "apellidos": "Rojas",
+          "rol": "Deposito",
+          "sucursal": "Tucumán",
+          "fecha_de_nacimiento": "1984-09-25",
+          "domicilio": "Calle 25 de Mayo 300, Tucumán",
+          "mail": "fernando.rojas@example.com",
+          "teléfono": "+54 381 234-5678",
+          "fecha_de_alta": "2015-04-01",
+          "fecha_de_baja": null
+        },
+        {
+          "nombres": "Valentina",
+          "apellidos": "Moreno",
+          "rol": "Administrador",
+          "sucursal": "Neuquén",
+          "fecha_de_nacimiento": "1991-06-07",
+          "domicilio": "Calle Roca 400, Neuquén",
+          "mail": "valentina.moreno@example.com",
+          "teléfono": "+54 299 567-8902",
+          "fecha_de_alta": "2019-08-23",
+          "fecha_de_baja": null
+        }
+      ]
+}

@@ -17,6 +17,12 @@ export const Nav = () => {
                     <img className="icono-perfil" src="src/assets/gente.png" alt="Perfil" />
                     <a className="navbar-text" href="http://localhost:5173/login">Iniciar Sesion</a>
                 </li>
+
+                  <li className="nav-item dropdown">
+                    <img className="icono-perfil" src="src/assets/gente.png" alt="Perfil" />
+                    <a className="navbar-text" href="http://localhost:5173/login">Iniciar Sesion</a>
+                </li>
+
               </ul>
             </div>
        </nav>
