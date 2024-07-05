@@ -33,7 +33,6 @@ export const AuthProvider = ( {children} ) => {
         } else {
             setLogueado(false);
             setRole('');
-            alert('Credenciales incorrectas');
         }
 
     }
