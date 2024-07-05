@@ -1,9 +1,8 @@
 import '../../css/OrdenInfo.css';
 import { Menu } from '../../components/Menu';
-import { CardOrden } from '../../components/CardOrden';
-import ordenes from '../../DB/ordenes.json';
+//import ordenes from '../../DB/ordenes.json';
 
-const orden = ordenes.lista[0];
+//const orden = ordenes.lista[0];
 
 export const OrdenInfo = () => {
 
@@ -158,7 +157,7 @@ export const OrdenInfo = () => {
                         <div className="col">
                         <div className="card">
                                 <div className="card-header d-flex justify-content-between">
-                                    <h5>Reparacion</h5>
+                                    <h5>Eventos</h5>
                                     <a href="#" className="btn btn-primary">Agregar Nuevo</a>
                                 </div>
                                 <div className="card-body">
