@@ -14,7 +14,7 @@ export const Nav = () => {
               </form>
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
-                    <img className="icono-perfil" src="../public/icons/gente.png" alt="Perfil" />
+                    <img className="icono-perfil" src="/icons/gente.png" alt="Perfil" />
                     <a className="navbar-text" href="http://localhost:5173/login">Iniciar Sesion</a>
                 </li>
               </ul>
