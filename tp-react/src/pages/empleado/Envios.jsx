@@ -23,7 +23,7 @@ export const Envios = () => {
                 <div className="col-9">
                     <div className="row">
                         <div className="col">
-                            <h1>Sucursales</h1>
+                            <h1>Envios</h1>
                         </div>
                     </div>
                     <div className="row">

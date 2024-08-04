@@ -21,7 +21,6 @@ import { Envios } from './pages/empleado/Envios'
 
 import { Nav } from './components/Nav'
 import { Footer } from './components/Footer'
-import { Layout } from './components/Layout'
 //Contextos
 
 import { AuthProvider } from './context/AuthContext'
