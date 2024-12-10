@@ -6,8 +6,8 @@ const {formatToday} = require("../helpers/dateHelper");
 
 exports.all = async() => {
     const query = `
-        SELECT id, nombre, cupo
-        FROM eventos
+        SELECT nombre, provincia, localidad, direccion, email, telefono, lunes, martes, miercoles, jueves, viernes, sabado
+        FROM sucursal
     `;
     try{
         [results] = await connection.query(query);
@@ -17,14 +17,26 @@ exports.all = async() => {
     }
 }
 
-
-exports.create = async( {nombre, descripcion, cupo} ) => {
+exports.public = async() => {
     const query = `
-        INSERT INTO eventos(nombre, descripcion, cupo, fecha_creacion, fecha_modificacion)
-        VALUES(?, ?, ?, ?, ?)
+        SELECT nombre, provincia, localidad, direccion, email, telefono, lunes, martes, miercoles, jueves, viernes, sabado
+        FROM sucursal
     `;
     try{
-        await connection.query(query, [nombre, descripcion, cupo, formatToday(), formatToday()]);
+        [results] = await connection.query(query);
+        return results;
+    }catch(error){
+        throw error;
+    }
+}
+
+exports.create = async( {codigo, nombre, provincia, localidad, direccion, email, telefono, lunes, martes, miercoles, jueves, viernes, sabado} ) => {
+    const query = `
+        INSERT INTO sucursal(codigo, nombre, provincia, localidad, direccion, email, telefono, lunes, martes, miercoles, jueves, viernes, sabado, f_creacion)
+        VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+    try{
+        await connection.query(query, [codigo, nombre, provincia, localidad, direccion, email, telefono, lunes, martes, miercoles, jueves, viernes, sabado, formatToday()]);
     }catch(error){
         throw error;
     }

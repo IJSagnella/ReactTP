@@ -1,6 +1,17 @@
 const sucursalModel = require('../models/sucursalModel');
 
 
+exports.public = async(req, res) => {
+    try{
+        const results = await sucursalModel.public();
+
+        res.json({ success: true, results });
+    }catch(error){
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Error al intentar recuperar los eventos' });
+    }
+}
+
 exports.index = async(req, res) => {
     try{
         const results = await sucursalModel.all();

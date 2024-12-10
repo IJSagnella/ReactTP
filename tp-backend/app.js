@@ -15,6 +15,7 @@ app.listen(port, () => {
 //Rutas
 app.use(require('./src/routes/eventoRoutes'));
 app.use(require('./src/routes/empleadoRoutes'));
+app.use(require('./src/routes/sucursalRoutes'));
 
 //Conexión a la base de datos.
 const connection = require('./db');
