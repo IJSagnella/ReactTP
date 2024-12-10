@@ -4,6 +4,7 @@ const mysql = require('mysql2/promise');
 // Configuración de la conexión a la base de datos
 const pool = mysql.createPool({
   host: 'localhost',
+  port: '3307',
   user: 'root',
   password: '',
   database: 'teleservice_db',
