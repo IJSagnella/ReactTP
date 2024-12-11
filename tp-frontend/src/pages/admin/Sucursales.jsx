@@ -1,6 +1,6 @@
 import { Menu } from '../../components/Menu';
 import { Tabla } from '../../components/Tabla';
-import sucursales from '../../DB/sucursales.json';
+import { useFetch } from '../../hooks/useFetch';
 
 export const Sucursales = () => {
 
@@ -14,6 +14,9 @@ export const Sucursales = () => {
         {"label": "Teléfono", "db": "telefono"},
         ];
 
+    const { data, loading } = useFetch("http://localhost:8888/sucursales");    
+
+    console.log(data);
     return(
         <div className='container-fluid min-vh-100'>
             <div className="row">
@@ -28,7 +31,7 @@ export const Sucursales = () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <Tabla columnas={columnas} lista={sucursales.lista} />
+                            <Tabla columnas={columnas} lista={data} carga={loading}/>
                         </div>
                     </div>
                 </div>
