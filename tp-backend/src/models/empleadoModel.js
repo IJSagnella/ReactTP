@@ -75,5 +75,18 @@ exports.findByEmailOrDni = async (email, dni) => {
         console.error("Error al buscar empleado por email o DNI:", error.message);
         throw error;  // Lanza el error para que sea capturado en el controlador
     }
-};
+}
+
+exports.all = async() => {
+    const query = `
+        SELECT id_sucursal, nombre, apellido, is_admin, dni, email, telefono, f_creacion
+        FROM empleado
+    `;
+    try{
+        [results] = await connection.query(query);
+        return results;
+    }catch(error){
+        throw error;
+    }
+}
 

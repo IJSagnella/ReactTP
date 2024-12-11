@@ -71,5 +71,15 @@ exports.login = async(req, res) => {
         console.log(error);
         res.status(500).json({ success: false, message: 'Error al intentar iniciar sesión' });
     }
+
 }
 
+exports.index = async(req, res) => {
+    try{
+        const results = await empleadoModel.all();
+        res.json({ success: true, results });
+    }catch(error){
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Error al intentar recuperar los empleados' });
+    }
+}
