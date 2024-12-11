@@ -12,6 +12,7 @@ export function useFetch(url) {
         .finally(()=>setLoading(false));//Se ejecuta cuando terminan todas las promesas
     }, []);
 
+    console.log(data);
     return { data, loading };
 }
 

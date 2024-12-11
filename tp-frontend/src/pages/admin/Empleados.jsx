@@ -1,19 +1,20 @@
 import { Menu } from '../../components/Menu';
 import { Tabla } from '../../components/Tabla';
-import empleados from '../../DB/empleados.json';
+import { useFetch } from '../../hooks/useFetch';
 
 export const Empleados = () => {
 
     const columnas = [
-        {"label": "Nombre", "db": "nombres"},
-        {"label": "Apellido", "db": "apellidos"},
-        {"label": "Rol", "db": "rol"},
-        {"label": "Sucursal", "db": "sucursal"},
-        {"label": "Fecha de Nacimiento", "db": "fecha_de_nacimiento"},
-        {"label": "Domicilio", "db": "domicilio"},
-        {"label": "Correo Electronico", "db": "mail"},
-        {"label": "Teléfono", "db": "teléfono"},
+        {"label": "Nombre", "db": "nombre"},
+        {"label": "Apellido", "db": "apellido"},
+        {"label": "Rol", "db": "id_rol"},
+        {"label": "Sucursal", "db": "id_sucursal"},
+        {"label": "Fecha de Alta", "db": "f_creacion"},
+        {"label": "Correo Electronico", "db": "email"},
+        {"label": "Teléfono", "db": "telefono"},
         ];
+
+    const { data, loading } = useFetch("http://localhost:8888/empleados");    
 
     return(
         <div className='container-fluid min-vh-100'>
@@ -29,7 +30,12 @@ export const Empleados = () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <Tabla columnas={columnas} lista={empleados.lista} />
+                            <a href="/admin/empleados/alta" className="btn btn-primary" role="button">Nuevo Empleado</a>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <Tabla columnas={columnas} lista={data} carga={ loading }/>
                         </div>
                     </div>
                 </div>

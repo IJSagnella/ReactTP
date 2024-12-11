@@ -6,7 +6,7 @@ const {formatToday} = require("../helpers/dateHelper");
 
 exports.all = async() => {
     const query = `
-        SELECT nombre, codigo, provincia, localidad, direccion, email, telefono, lunes, martes, miercoles, jueves, viernes, sabado
+        SELECT id, nombre, codigo, provincia, localidad, direccion, email, telefono, lunes, martes, miercoles, jueves, viernes, sabado
         FROM sucursal
     `;
     try{

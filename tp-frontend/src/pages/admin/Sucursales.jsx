@@ -16,7 +16,6 @@ export const Sucursales = () => {
 
     const { data, loading } = useFetch("http://localhost:8888/sucursales");    
 
-    console.log(data);
     return(
         <div className='container-fluid min-vh-100'>
             <div className="row">

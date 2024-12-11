@@ -1,8 +1,7 @@
 const empleadoModel = require("../models/empleadoModel");
 
 exports.register = async(req, res) => {
-    const { sucursal, nombre, apellido, dni, email, password, telefono } = req.body;
-    const is_admin = false;
+    const { sucursal, nombre, apellido, dni, email, password, telefono, rol } = req.body;
 
     console.log(req.body);
 
@@ -27,7 +26,7 @@ exports.register = async(req, res) => {
         // Crear el empleado
         await empleadoModel.create({
             sucursal,
-            is_admin,
+            rol,
             nombre,
             apellido,
             dni,
