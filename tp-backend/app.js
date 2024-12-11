@@ -7,6 +7,8 @@ const port = 8888;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.json());
+
 const cors = require('cors');
 app.options('*', cors());
 app.use((req, res, next) => {

@@ -7,15 +7,31 @@ const bcrypt = require('bcrypt');
 
 
 exports.create = async( {sucursal, is_admin, nombre, apellido, dni, email, password, telefono} ) => {
+    if (!password) {
+        throw new Error("La contraseña es obligatoria.");
+    }
+
     const password_crypt = await bcrypt.hash(password, 10);
     const query = `
         INSERT INTO empleado(id_sucursal, is_admin, nombre, apellido, dni, email, password, telefono, f_creacion)
         VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
-    try{
-        await connection.query(query, [sucursal, (is_admin ? 1 : 0), nombre, apellido, dni, email, password_crypt, telefono, formatToday()]);
-    }catch(error){
-        throw error;
+
+    try {
+        await connection.query(query, [
+            sucursal,
+            is_admin ? 1 : 0, // Convierte `is_admin` a 1 o 0.
+            nombre,
+            apellido,
+            dni,
+            email,
+            password_crypt,
+            telefono,
+            formatToday() // Fecha de creación.
+        ]);
+    } catch (error) {
+        console.error("Error al insertar el empleado:", error.message);
+        throw error; // Re-lanza el error para que sea manejado por el controlador.
     }
 }
 
@@ -44,4 +60,20 @@ exports.login = async( {email, password} ) => {
         throw error;
     }
 }
+
+exports.findByEmailOrDni = async (email, dni) => {
+    const query = `
+        SELECT * FROM empleado
+        WHERE email = ? OR dni = ?
+        LIMIT 1
+    `;
+
+    try {
+        const [rows] = await connection.query(query, [email, dni]);
+        return rows.length > 0 ? rows[0] : null;  // Devuelve el primer registro encontrado, o null si no existe
+    } catch (error) {
+        console.error("Error al buscar empleado por email o DNI:", error.message);
+        throw error;  // Lanza el error para que sea capturado en el controlador
+    }
+};
 
