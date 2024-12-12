@@ -9,6 +9,7 @@ import { Consulta } from './pages/Consulta'
 import { Admin } from './pages/admin/Admin'
 import { Sucursales } from './pages/admin/Sucursales'
 import { Empleados } from './pages/admin/Empleados'
+import { EmpleadosAlta } from './pages/admin/EmpleadosAlta'
 import { Repuestos } from './pages/admin/Repuestos'
 import { Productos } from './pages/admin/Productos'
 import { Ordenes } from './pages/empleado/Ordenes'
@@ -39,6 +40,7 @@ export const App = () => {
         <Route path= '/login' element={<Login/>} />
         <Route path= '/admin' element={<Admin/>} />
         <Route path= '/admin/empleados' element={<Empleados/>} />
+        <Route path= '/admin/empleados/alta' element={<EmpleadosAlta/>} />
         <Route path= '/admin/sucursales' element={<Sucursales/>} />
         <Route path= '/admin/repuestos' element={<Repuestos/>} />
         <Route path= '/admin/productos' element={<Productos/>} />

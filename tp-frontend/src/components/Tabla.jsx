@@ -1,8 +1,7 @@
 import '../css/Tabla.css';
 
 
-export const Tabla = ({ columnas, lista }) => {
-
+export const Tabla = ({ columnas, lista, carga }) => {
 
     return(
         <div className="container">
@@ -19,16 +18,18 @@ export const Tabla = ({ columnas, lista }) => {
                             </tr>
                         </thead>
                         <tbody>
+                                {
+                                carga && <tr><td>Cargando...</td></tr>
+                                } 
                                 { 
-                                lista.map( (item, i) =>{
-                                    return (<tr key={i}>
-                                        {
-                                        columnas.map( (columna, i) =>{
-                                        return (<td key={i}>{item[columna.db]}</td>)
-                                        })}
-                                    </tr>)
-                                    })
-                                }
+                                    lista?.map( (item, i) =>{
+                                        return (<tr key={i}>
+                                            {
+                                            columnas.map( (columna, i) =>{
+                                            return (<td key={i}>{item[columna.db]}</td>)
+                                            })}
+                                        </tr>)
+                                    })}
                         </tbody>
                     </table>
                 </div>
