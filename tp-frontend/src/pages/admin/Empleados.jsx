@@ -28,9 +28,9 @@ export const Empleados = () => {
                             <h1>Empleados</h1>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col">
-                            <a href="/admin/empleados/alta" className="btn btn-primary" role="button">Nuevo Empleado</a>
+                    <div className="row mt-4">
+                        <div className="col-4 mb-1 ">
+                            <a href="/admin/empleados/alta" className="btn btn-primary" role="button">Registrar Empleado</a>
                         </div>
                     </div>
                     <div className="row">

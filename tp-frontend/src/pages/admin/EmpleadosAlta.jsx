@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export const EmpleadosAlta = () => {
    
-    const { data, loading } = useFetch("http://localhost:8888/sucursales"); 
+    const { data } = useFetch("http://localhost:8888/sucursales"); 
 
     // Estado para cada campo
   const [sucursal, setSucursal] = useState('');
