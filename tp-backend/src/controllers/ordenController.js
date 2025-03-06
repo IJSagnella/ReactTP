@@ -29,7 +29,7 @@ exports.show = async(req, res) => {
         if(result == null){
             res.status(404).json({ success: false, message: 'La orden no existe o ha dejado de existir' });
         }else{            
-            res.json({ success: true, result });
+            res.json({ success: true, results });
         }
     }catch(error){
         console.log(error);
@@ -44,7 +44,7 @@ exports.search = async(req, res) => {
         if(result == null){
             res.status(404).json({ success: false, message: 'La orden no se encuentran ordenes para esos filtros' });
         }else{            
-            res.json({ success: true, result });
+            res.json({ success: true, results });
         }
     }catch(error){
         console.log(error);

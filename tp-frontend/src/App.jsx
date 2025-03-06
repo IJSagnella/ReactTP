@@ -43,7 +43,7 @@ export const App = () => {
         <Route path= '/admin/sucursales' element={<Sucursales/>} />
         <Route path= '/admin/ordenes' element={<AdminOrdenes/>} />
         <Route path= '/empleado/ordenes' element={<Ordenes/>} />
-        <Route path= '/empleado/ordenes/1' element={<OrdenInfo/>} />
+        <Route path= '/empleado/ordenes/:id' element={<OrdenInfo/>} />
         <Route path= '/empleado' element={<Resumen/>} />
         <Route path= '/empleado/pedidos' element={<Pedidos/>} />
         <Route path= '/empleado/envios' element={<Envios/>} />
