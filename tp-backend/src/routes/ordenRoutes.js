@@ -9,6 +9,7 @@ router.post('/ordenes', ordenController.store);
 router.get('/ordenes', ordenController.index);
 router.get('/ordenes/:ID', ordenController.show); 
 router.put('/ordenes/:ID', ordenController.update);
+router.get('/ordenes/search/:dni', ordenController.search);
 
 
 module.exports = router;

@@ -1,9 +1,13 @@
 import '../../css/Admin.css';
 import { Menu } from '../../components/Menu';
 import { CardOrden } from '../../components/CardOrden';
-import ordenes from '../../DB/ordenes.json';
+import { useFetch } from '../../hooks/useFetch';
+
 
 export const Ordenes = () => {
+
+    const { data, loading } = useFetch("http://localhost:8888/ordenes");   
+    console.log(data);
 
     return(
         <div className='container-fluid min-vh-100'>
@@ -19,11 +23,14 @@ export const Ordenes = () => {
                     </div>
                     <div className="row">
                         <div className="col mb-4">
+                            {
+                              loading && <div className="row">Cargando...</div> 
+                            }
                             { 
-                                ordenes.lista.map( (e, i) =>{
+                                data?.map( (e, i) =>{
                                     return (
                                         <div className="row" key={i}>
-                                            <CardOrden key={i} numero={e.numero} estado={e.estado} producto={e.producto.modelo} sucursal={e.sucursal} cliente={e.cliente.nombre} creacion={e.creacion} modificacion={e.modificacion} />
+                                            <CardOrden key={i} numero={e.id} estado={e.estado} producto={e.producto} sucursal={e.sucursal} nombre={e.nombre_cliente} apellido={e.apellido_cliente} creacion={e.f_creacion} url={"/empleado/ordenes/"} />
                                         </div>
                                         )})
                             }

@@ -8,8 +8,20 @@ const {formatToday} = require("../helpers/dateHelper");
 
 exports.all = async() => {
     const query = `
-        SELECT id, id_sucursal, id_categoria, producto, condicion, serie, defecto, id_estado, accesorios, reparacion, precio, f_creacion, marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente
-        FROM orden
+            SELECT 
+            o.id, o.id_sucursal, s.nombre AS sucursal,
+            o.id_categoria, c.codigo AS categoria,
+            o.producto, o.condicion, o.serie, o.defecto,
+            o.id_estado, e.descripcion AS estado,
+            o.accesorios, o.reparacion, o.precio, o.f_creacion,
+            o.marca, o.nombre_cliente, o.apellido_cliente,
+            o.dni_cliente, o.localidad_cliente, o.direccion_cliente,
+            o.telefono_cliente, o.email_cliente, o.provincia_cliente
+        FROM orden o
+        INNER JOIN categoria c ON o.id_categoria = c.id
+        INNER JOIN estado_orden e ON o.id_estado = e.id
+        INNER JOIN sucursal s ON o.id_sucursal = s.id
+        ORDER BY o.f_creacion DESC
     `;
     try{
         [results] = await connection.query(query);
@@ -18,6 +30,34 @@ exports.all = async() => {
         throw error;
     }
 }
+
+exports.search = async(dni) => {
+    const query = `
+            SELECT 
+            o.id, o.id_sucursal, s.nombre AS sucursal,
+            o.id_categoria, c.codigo AS categoria,
+            o.producto, o.condicion, o.serie, o.defecto,
+            o.id_estado, e.descripcion AS estado,
+            o.accesorios, o.reparacion, o.precio, o.f_creacion,
+            o.marca, o.nombre_cliente, o.apellido_cliente,
+            o.dni_cliente, o.localidad_cliente, o.direccion_cliente,
+            o.telefono_cliente, o.email_cliente, o.provincia_cliente
+        FROM orden o
+        INNER JOIN categoria c ON o.id_categoria = c.id
+        INNER JOIN estado_orden e ON o.id_estado = e.id
+        INNER JOIN sucursal s ON o.id_sucursal = s.id
+        WHERE o.dni_cliente = ?
+        ORDER BY o.f_creacion DESC
+    `;
+    try{
+        [results] = await connection.query(query, [dni]);
+        return results;
+    }catch(error){
+        throw error;
+    }
+}
+
+
 
 exports.create = async( {id_sucursal, id_categoria, producto, condicion, serie, defecto, accesorios,marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente} ) => {
     const query = `

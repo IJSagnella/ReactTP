@@ -1,6 +1,6 @@
 import '../css/Card.css';
 
-export const CardOrden = ({ numero, estado, producto, sucursal, nombre, apellido, creacion }) => {
+export const CardOrden = ({ numero, estado, producto, sucursal, nombre, apellido, creacion, url }) => {
 
     return(
         <div className="col mb-4">
@@ -59,7 +59,7 @@ export const CardOrden = ({ numero, estado, producto, sucursal, nombre, apellido
                             </div>
                         </div>
                         <div className="col">
-                            <a className="btn btn-primary mb-3" href="/empleado/ordenes/1" role="button">Ver Orden</a>
+                            <a className="btn btn-primary mb-3" href={ url + numero } role="button">Ver Orden</a>
                             <button className="btn btn-danger" type="button">Cancelar</button>
                         </div>
                     </div>

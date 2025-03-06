@@ -37,6 +37,21 @@ exports.show = async(req, res) => {
     }
 }
 
+exports.search = async(req, res) => {
+    const {dni} = req.params;
+    try{
+        const result = await ordenModel.search(dni);
+        if(result == null){
+            res.status(404).json({ success: false, message: 'La orden no se encuentran ordenes para esos filtros' });
+        }else{            
+            res.json({ success: true, result });
+        }
+    }catch(error){
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Error al intentar recuperar lista de ordenes' });
+    }
+}
+
 
 exports.update = async(req, res) => {
     const { ID } = req.params;
