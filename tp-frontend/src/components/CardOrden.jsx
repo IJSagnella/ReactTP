@@ -1,6 +1,6 @@
 import '../css/Card.css';
 
-export const CardOrden = ({ numero, estado, producto, sucursal, cliente, creacion, modificacion }) => {
+export const CardOrden = ({ numero, estado, producto, sucursal, nombre, apellido, creacion }) => {
 
     return(
         <div className="col mb-4">
@@ -36,10 +36,18 @@ export const CardOrden = ({ numero, estado, producto, sucursal, cliente, creacio
                         </div>
                         <div className="col">
                             <div className='h5 mb-4 font-weight-bold text-gray-800'>
-                                Cliente
+                                Nombre
                             </div>
                             <div className='mb-0 font-weight-bold text-gray-800'>
-                                { cliente }
+                                { nombre }
+                            </div>
+                        </div>    
+                        <div className="col">    
+                            <div className='h5 mb-4 font-weight-bold text-gray-800'>
+                                Apellido
+                            </div>
+                            <div className='mb-0 font-weight-bold text-gray-800'>
+                                { apellido }
                             </div>
                         </div>
                         <div className="col">
@@ -48,14 +56,6 @@ export const CardOrden = ({ numero, estado, producto, sucursal, cliente, creacio
                             </div>
                             <div className='mb-0 font-weight-bold text-gray-800'>
                                 { creacion }
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className='h5 mb-4 font-weight-bold text-gray-800'>
-                                Ultima Modificacion
-                            </div>
-                            <div className='mb-0 font-weight-bold text-gray-800'>
-                                { modificacion }
                             </div>
                         </div>
                         <div className="col">
