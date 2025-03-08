@@ -71,6 +71,7 @@ exports.login = async(req, res) => {
                 success: true,
                 message: 'Inicio de sesión exitoso',
                 nombre: empleado.nombre,
+                sucursal: empleado.id_sucursal,
                 token
             });
         }
@@ -82,6 +83,15 @@ exports.login = async(req, res) => {
 }
 
 exports.index = async(req, res) => {
+
+    const userSession = req.user;
+    if (userSession.rol != 1){
+        return res.status(403).json({
+            success: false,
+            message: 'Usuario sin permiso para utilizar esta funcion'
+        });
+    }
+
     try{
         const results = await empleadoModel.all();
         res.json({ success: true, results });
