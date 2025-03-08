@@ -24,6 +24,7 @@ import { Footer } from './components/Footer'
 //Contextos
 
 import { AuthProvider } from './context/AuthContext'
+import PrivateRoute from './context/PrivateRoute';
 
 export const App = () => {
 
@@ -33,20 +34,28 @@ export const App = () => {
     <AuthProvider>
     <Nav/>
       <Routes>
+        
         <Route path= '/' element={<Inicio/>} />
         <Route path= '/contacto' element={<Contacto/>} />
         <Route path= '/consulta' element={<Consulta/>} />
         <Route path= '/login' element={<Login/>} />
-        <Route path= '/admin' element={<Admin/>} />
-        <Route path= '/admin/empleados' element={<Empleados/>} />
-        <Route path= '/admin/empleados/alta' element={<EmpleadosAlta/>} />
-        <Route path= '/admin/sucursales' element={<Sucursales/>} />
-        <Route path= '/admin/ordenes' element={<AdminOrdenes/>} />
-        <Route path= '/empleado/ordenes' element={<Ordenes/>} />
-        <Route path= '/empleado/ordenes/1' element={<OrdenInfo/>} />
-        <Route path= '/empleado' element={<Resumen/>} />
-        <Route path= '/empleado/pedidos' element={<Pedidos/>} />
-        <Route path= '/empleado/envios' element={<Envios/>} />
+
+        <Route element={<PrivateRoute rolRequerido={1}/>}>
+          <Route path="/admin" element={<Admin />} />
+          <Route path= '/admin/empleados' element={<Empleados/>} />
+          <Route path= '/admin/empleados/alta' element={<EmpleadosAlta/>} />
+          <Route path= '/admin/sucursales' element={<Sucursales/>} />
+          <Route path= '/admin/ordenes' element={<AdminOrdenes/>} />
+        </Route>
+
+        <Route element={<PrivateRoute rolRequerido={2}/>}>
+          <Route path= '/empleado/ordenes' element={<Ordenes/>} />
+          <Route path= '/empleado/ordenes/1' element={<OrdenInfo/>} />
+          <Route path= '/empleado' element={<Resumen/>} />
+          <Route path= '/empleado/pedidos' element={<Pedidos/>} />
+          <Route path= '/empleado/envios' element={<Envios/>} />
+        </Route>
+
       </Routes>
     <Footer/>
     </AuthProvider>

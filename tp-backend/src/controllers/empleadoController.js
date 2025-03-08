@@ -72,12 +72,30 @@ exports.login = async(req, res) => {
                 message: 'Inicio de sesión exitoso',
                 nombre: empleado.nombre,
                 sucursal: empleado.id_sucursal,
+                rol:empleado.id_rol,
                 token
             });
         }
     }catch(error){
         console.log(error);
         res.status(500).json({ success: false, message: 'Error al intentar iniciar sesión' });
+    }
+
+}
+
+exports.validate = async(req, res) => {
+    const userSession = req.user;
+    try{
+        const rol = await empleadoModel.getRol( userSession.ID );
+
+            res.json({
+                success: true,
+                message: 'Usuario validado',
+                id_rol: rol.id_rol,
+            });
+    }catch(error){
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Error al intentar validar el usuario' });
     }
 
 }

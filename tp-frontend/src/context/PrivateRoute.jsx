@@ -1,11 +1,13 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
-const PrivateRoute = ({ component: Component }) => {
-    const { logueado } = useAuth();
+const PrivateRoute = ({ rolRequerido }) => {
+    const { logueado, rol } = useAuth(); // Obtenemos el estado de autenticación
 
-    return logueado ? <Component /> : <Navigate to="/" />;
+    if (!logueado) return <Navigate to="/login" />;
+    if (rolRequerido && rol !== rolRequerido) return <Navigate to="/empleado" />; 
+
+    return <Outlet />;
 };
 
 export default PrivateRoute;
