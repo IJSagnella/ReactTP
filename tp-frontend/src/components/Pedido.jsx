@@ -2,7 +2,7 @@ import '../css/Pedido.css';
 
 export const Pedido = ({numero_pedido, producto, estado, defecto, reparacion, sucursal}) => {
     return (
-        <div className="row d-flex justify-content-center card carta-pedido">
+        <div className='container-carta-pedido card'>
             <div className="card-body">
                 <h5 className="card-title">Nro. Pedido: {numero_pedido}</h5>
             </div>

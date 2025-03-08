@@ -23,9 +23,9 @@ export const Consulta = () => {
 
     return (
     <div className="container-consulta mt-4"> 
-        <div className="row d-flex justify-content-center"> 
+        <div className="row d-flex justify-content-center pb-4"> 
             <div className="col-md-9"> 
-                <div className="card p-4 mt-3"> 
+                <div className="container-consulta-pedido p-4 mt-3"> 
                     <h3 className="heading mt-5 text-center">SEGUI EL ESTADO DE TU PEDIDO</h3> 
                     <p className="text-center">Ingrese su DNI para ver sus pedidos</p>
                     <div className="d-flex justify-content-center px-5"> 
@@ -44,17 +44,25 @@ export const Consulta = () => {
                 </div> 
             </div> 
         </div>
-        {listaDeOrdenes?.map((orden, indice) => (
-            <Pedido 
-                key={indice}
-                numero_pedido={orden.id}
-                producto={orden.producto}
-                estado={orden.estado}
-                defecto={orden.defecto}
-                reparacion={orden.reparacion}
-                sucursal={orden.sucursal}
-            />
-        ))} 
+        <div className="container-cartas-pedidos">
+            <div className="row justify-content-center">
+                {listaDeOrdenes?.map((orden, indice) => (
+                    <div 
+                        key={indice} 
+                        className="col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-4"
+                    >
+                        <Pedido 
+                            numero_pedido={orden.id}
+                            producto={orden.producto}
+                            estado={orden.estado}
+                            defecto={orden.defecto}
+                            reparacion={orden.reparacion}
+                            sucursal={orden.sucursal}
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
     </div>
     );
 }
