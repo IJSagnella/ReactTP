@@ -1,7 +1,15 @@
 const empleadoModel = require("../models/empleadoModel");
+const auth = require('../middleware/auth');
 
 exports.register = async(req, res) => {
     const { sucursal, nombre, apellido, dni, email, password, telefono, rol } = req.body;
+    const userSession = req.user;
+    if (userSession.rol != 1){
+        return res.status(403).json({
+            success: false,
+            message: 'Usuario sin permiso para utilizar esta funcion'
+        });
+    }
 
     console.log(req.body);
 
@@ -56,14 +64,15 @@ exports.login = async(req, res) => {
             res.json({ success: false, message: 'Credenciales incorrectas' });
         }else{
             //Información que se va a hashear.
-            //const playload = { ID: usuario.id, nombre: usuario.nombre, is_admin: (usuario.is_admin == '1') };
+            const payload = { ID: empleado.id, nombre: empleado.nombre, rol:empleado.id_rol };
             //Access token.
-            //const accessToken = jwt.sign(playload, process.env.JWT_ACCESS_TOKEN_SECRET, { expiresIn: '15m' });
+            const token = auth.generateToken(payload);
             res.json({
                 success: true,
                 message: 'Inicio de sesión exitoso',
-                nombre: empleado.nombre
-                //accessToken
+                nombre: empleado.nombre,
+                sucursal: empleado.id_sucursal,
+                token
             });
         }
     }catch(error){
@@ -74,6 +83,15 @@ exports.login = async(req, res) => {
 }
 
 exports.index = async(req, res) => {
+
+    const userSession = req.user;
+    if (userSession.rol != 1){
+        return res.status(403).json({
+            success: false,
+            message: 'Usuario sin permiso para utilizar esta funcion'
+        });
+    }
+
     try{
         const results = await empleadoModel.all();
         res.json({ success: true, results });

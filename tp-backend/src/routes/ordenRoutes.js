@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth');
 
 
 //Controlador
 const ordenController = require('../controllers/ordenController');
 
-router.post('/ordenes', ordenController.store);
-router.get('/ordenes', ordenController.index);
-router.get('/ordenes/:ID', ordenController.show); 
-router.put('/ordenes/:ID', ordenController.update);
+router.post('/ordenes', auth.authToken, ordenController.store);
+router.get('/ordenes', auth.authToken, ordenController.index);
+router.get('/ordenes/:ID', auth.authToken, ordenController.show); 
+router.put('/ordenes/:ID', auth.authToken, ordenController.update);
 router.get('/ordenes/search/:dni', ordenController.search);
 
 
