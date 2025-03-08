@@ -1,8 +1,26 @@
 import '../css/Consulta.css';
+import React, { useState } from 'react';
 import { Pedidos } from '../components/Pedidos';
+import { buscarOrdenesPor } from '../services/OrdenesService';
+
 
 export const Consulta = () => {
-    
+    const [dni, setDni] = useState('');
+    const [listaDeOrdenes, setOrdenes] = useState(null);
+
+    const actualizarDni = (event) => {
+        setDni(event.target.value);
+    };
+
+    const ordenesPor = async (dni) => {
+        try {
+            const resultado = await buscarOrdenesPor(dni);
+            setOrdenes(resultado);
+        } catch (error) {
+            alert(`Error al obtener las ordenes del ${dni}`);
+        }
+    };
+
     return(
         <>
     <div className="container mt-4"> 
@@ -13,8 +31,21 @@ export const Consulta = () => {
                     <p className="text-center">Ingresa el codigo de seguimiento que llego a tu correo</p>
                     <div className="d-flex justify-content-center px-5"> 
                         <div className="search"> 
-                            <input type="text" className="search-input" placeholder="1XXXXXXXXXXX-01" name=""/> 
-                            <a href="#" className="search-icon">Buscar</a> 
+                            <input 
+                            type="number"
+                            value={dni}
+                            onChange={actualizarDni} 
+                            className="search-input" 
+                            placeholder="Ingrese su DNI" 
+                            name=""
+                            /> 
+                            <button className="search-icon" onClick={() => ordenesPor(dni)}>Buscar</button>
+                            {listaDeOrdenes && (
+                                <div>
+                                    <h2>Orden por Dni: {dni}</h2>
+                                    <pre>{JSON.stringify(listaDeOrdenes, null, 2)}</pre>
+                                </div>
+                            )} 
                         </div> 
                     </div> 
                 </div> 
@@ -23,5 +54,5 @@ export const Consulta = () => {
         <Pedidos/>
     </div>
     </>
-    )
+    );
 }
