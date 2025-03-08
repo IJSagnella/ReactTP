@@ -3,6 +3,13 @@ const auth = require('../middleware/auth');
 
 exports.register = async(req, res) => {
     const { sucursal, nombre, apellido, dni, email, password, telefono, rol } = req.body;
+    const userSession = req.user;
+    if (userSession.rol != 1){
+        return res.status(403).json({
+            success: false,
+            message: 'Usuario sin permiso para utilizar esta funcion'
+        });
+    }
 
     console.log(req.body);
 
