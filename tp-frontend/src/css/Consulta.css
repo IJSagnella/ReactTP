@@ -1,11 +1,12 @@
-.container {
+.container-consulta {
+    height: 65vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
 }
 
-.card{ 
+.card { 
     border: none;
     background: #eee;
 }
