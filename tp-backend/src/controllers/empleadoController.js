@@ -91,7 +91,7 @@ exports.validate = async(req, res) => {
             res.json({
                 success: true,
                 message: 'Usuario validado',
-                id_rol: rol.id_rol,
+                rol: rol.id_rol,
             });
     }catch(error){
         console.log(error);

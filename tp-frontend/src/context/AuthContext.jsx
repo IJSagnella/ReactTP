@@ -1,101 +1,81 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-
-
-
 
 const AuthContext = createContext();
 
-
-export const AuthProvider = ( {children} ) => {
-
+export const AuthProvider = ({ children }) => {
     const [logueado, setLogueado] = useState(false);
-    const [rol, setRol] = useState("");
+    const [rol, setRol] = useState(null);
     const [token, setToken] = useState(null);
     const navigate = useNavigate();
 
+    // ✅ Cargar sesión desde localStorage al iniciar
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
-        if (storedToken) {
+        const storedRol = localStorage.getItem("rol");
+
+        if (storedToken && storedRol) {
             setLogueado(true);
+            setRol(Number(storedRol)); // Convertimos rol a número
             setToken(storedToken);
-
-            // Verificar token con el backend para obtener el rol
-            const verificarToken = async () => {
-                try {
-                    const response = await fetch('http://localhost:8888/validar', {
-                        method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json',  // Indicamos que el cuerpo es JSON
-                        },
-                        body: JSON.stringify({token:storedToken}), // Convertimos los datos a JSON
-                      });
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        setRol(data.rol);
-                    } else {
-                        logout(); // Si el token no es válido, cerrar sesión
-                    }
-                } catch (error) {
-                    console.error("Error al validar token:", error);
-                    logout();
-                }
-            };
-
-            verificarToken();
+        } else {
+            setLogueado(false);
+            setRol(null);
+            setToken(null);
         }
-    }, []); 
+    }, []);
 
+    // ✅ Función de login con el backend
     const login = async (email, password) => {
-    try {
-        const response = await fetch('http://localhost:8888/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',  // Indicamos que el cuerpo es JSON
-            },
-            body: JSON.stringify({email, password}), // Convertimos los datos a JSON
-          });
+        try {
+            const response = await fetch("http://localhost:8888/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+            });
 
-        if (response.ok) {
+            if (!response.ok) {
+                throw new Error("Credenciales incorrectas");
+            }
+
             const data = await response.json();
             setLogueado(true);
             setRol(data.rol);
             setToken(data.token);
 
-            // Guardar token en localStorage
+            // Guardar en localStorage
             localStorage.setItem("token", data.token);
+            localStorage.setItem("rol", data.rol);
 
-            return data; // Devolvemos el usuario autenticado
-        } else {
+            // Redirigir según el rol
+            navigate(data.rol === 1 ? "/admin" : "/empleado");
+
+            return data; // Retornar datos del usuario
+        } catch (error) {
+            console.error("Error en login:", error);
             setLogueado(false);
-            setRol("");
-            return null; // Falló la autenticación
+            setRol(null);
+            setToken(null);
+            return null;
         }
-    } catch (error) {
-        console.error("Error al conectar con el servidor:", error);
-        return null; // Error en la conexión
-    }
-};
-            
+    };
 
+    // ✅ Función de logout
     const logout = () => {
         setLogueado(false);
-        setRol('');
+        setRol(null);
         setToken(null);
-        localStorage.removeItem("token"); // Eliminar token al cerrar sesión
-        navigate('/')
-    }
+        localStorage.removeItem("token");
+        localStorage.removeItem("rol");
+        navigate("/login"); // Redirigir después de cerrar sesión
+    };
 
     return (
-        <AuthContext.Provider value={ {logueado, login, logout, rol, token } }>
-            { children }
+        <AuthContext.Provider value={{ logueado, login, logout, rol, token }}>
+            {children}
         </AuthContext.Provider>
-    )
+    );
+};
 
-}
-
-export const useAuth = () => {
-    return useContext(AuthContext);
-}
+// Hook para acceder al contexto de autenticación
+export const useAuth = () => useContext(AuthContext);

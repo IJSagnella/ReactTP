@@ -85,7 +85,7 @@ exports.getRol = async (id) => {
 
     try {
         const [rows] = await connection.query(query, [id]);
-        return rows[0];  // Devuelve el primer registro encontrado, o null si no existe
+        return rows.length > 0 ? rows[0] : null;  // Devuelve el primer registro encontrado, o null si no existe
     } catch (error) {
         console.error("Error al buscar empleado por id", error.message);
         throw error;  // Lanza el error para que sea capturado en el controlador
