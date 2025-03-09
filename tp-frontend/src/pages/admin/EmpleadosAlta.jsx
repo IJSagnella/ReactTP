@@ -1,9 +1,11 @@
 import { Menu } from '../../components/Menu';
 import { useFetch } from '../../hooks/useFetch';
 import { useState } from 'react';
+import { useAuth } from '../../context/AuthContext';
 
 export const EmpleadosAlta = () => {
-   
+    const { token } = useAuth();  // Obtener el token desde el contexto de autenticación
+
     const { data } = useFetch("http://localhost:8888/sucursales"); 
 
     // Estado para cada campo
@@ -38,6 +40,7 @@ export const EmpleadosAlta = () => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',  // Indicamos que el cuerpo es JSON
+            'Authorization': `Bearer ${token}`,
           },
           body: JSON.stringify(empleadoData), // Convertimos los datos a JSON
         });
