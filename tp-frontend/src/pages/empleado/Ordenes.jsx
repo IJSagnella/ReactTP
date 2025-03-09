@@ -7,7 +7,7 @@ import { useFetch } from '../../hooks/useFetch';
 export const Ordenes = () => {
 
     const { data, loading } = useFetch("http://localhost:8888/ordenes");   
-    console.log(data);
+    
 
     return(
         <div className='container-fluid min-vh-100'>
