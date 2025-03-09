@@ -9,14 +9,14 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(null);
     const navigate = useNavigate();
 
-    // ✅ Cargar sesión desde localStorage al iniciar
+    // ✅ Almacenar en localStorage los datos de login
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         const storedRol = localStorage.getItem("rol");
 
         if (storedToken && storedRol) {
             setLogueado(true);
-            setRol(Number(storedRol)); // Convertimos rol a número
+            setRol(Number(storedRol));
             setToken(storedToken);
         } else {
             setLogueado(false);
@@ -25,7 +25,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // ✅ Función de login con el backend
     const login = async (email, password) => {
         try {
             const response = await fetch("http://localhost:8888/login", {
@@ -34,40 +33,36 @@ export const AuthProvider = ({ children }) => {
                 body: JSON.stringify({ email, password }),
             });
 
+            console.log(response.ok);
             if (!response.ok) {
+                console.log("no se logueo");
                 throw new Error("Credenciales incorrectas");
             }
 
+            console.log("se logueo");
             const data = await response.json();
             setLogueado(true);
             setRol(data.rol);
             setToken(data.token);
 
-            // Guardar en localStorage
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.rol);
 
-            // Redirigir según el rol
-            navigate(data.rol === 1 ? "/admin" : "/empleado");
-
-            return data; // Retornar datos del usuario
+            return data;
         } catch (error) {
             console.error("Error en login:", error);
-            setLogueado(false);
-            setRol(null);
-            setToken(null);
             return null;
         }
     };
 
-    // ✅ Función de logout
     const logout = () => {
+        console.log("Cerrando sesión...");
         setLogueado(false);
         setRol(null);
         setToken(null);
         localStorage.removeItem("token");
         localStorage.removeItem("rol");
-        navigate("/login"); // Redirigir después de cerrar sesión
+        navigate("/login");
     };
 
     return (
@@ -77,5 +72,4 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-// Hook para acceder al contexto de autenticación
 export const useAuth = () => useContext(AuthContext);

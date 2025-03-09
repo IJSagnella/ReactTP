@@ -61,7 +61,7 @@ exports.login = async(req, res) => {
     try{
         const empleado = await empleadoModel.login( {email, password} );
         if(empleado == null){
-            res.json({ success: false, message: 'Credenciales incorrectas' });
+            res.status(404).json({ success: false, message: 'Credenciales incorrectas' });
         }else{
             //Información que se va a hashear.
             const payload = { ID: empleado.id, nombre: empleado.nombre, rol:empleado.id_rol };
