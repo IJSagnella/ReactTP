@@ -1,6 +1,6 @@
 export const buscarSucursales = async () => {
     try {
-        const response = await fetch(`http://localhost:8888/sucursales`);
+        const response = await fetch(`http://localhost:8888/contactos`);
         if (!response.ok) {
             throw new Error(`Error al obtener las sucursales`);
         }

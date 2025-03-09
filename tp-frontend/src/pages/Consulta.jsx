@@ -49,7 +49,7 @@ export const Consulta = () => {
                 {listaDeOrdenes?.map((orden, indice) => (
                     <div 
                         key={indice} 
-                        className="col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-4"
+                        className="col-12 col-sm-6 col-lg-4 mb-4"
                     >
                         <Pedido 
                             numero_pedido={orden.id}
