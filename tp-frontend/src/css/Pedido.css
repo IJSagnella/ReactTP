@@ -1,0 +1,28 @@
+.container-carta-pedido {
+    margin: 0.5rem;
+    max-width: 70%;
+    width: 100%;
+}
+
+.card {
+    border: none;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.list-group-item {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}

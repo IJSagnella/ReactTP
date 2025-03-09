@@ -2,7 +2,7 @@ import '../css/Login.css';
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext"
 import { useNavigate } from "react-router-dom";
-//import axios from "axios";
+
 
 export const Login = () => {
 
@@ -12,19 +12,25 @@ export const Login = () => {
     const [emailname, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handlerLogin = () => {
-        // Simulación de autenticación
-        const user = login(emailname, password);
-        if (user) {
-            if (user.role === 'Administrador') {
-                navigate('/admin');
-            } else if (user.role === 'Empleado') {
-                navigate('/empleado');
+    const handlerLogin = async () => {
+        try {
+            const success = await login(emailname, password); // Llamamos al login del contexto
+    
+            if (success) {
+                // Redirigir según el rol del usuario autenticado
+                if (success.rol === 1) {
+                    navigate("/admin");
+                } else if (success.rol === 2) {
+                    navigate("/empleado");
+                }
+            } else {
+                alert("Credenciales incorrectas");
             }
-        } else {
-            alert('Credenciales incorrectas');
+        } catch (error) {
+            console.error("Error en la autenticación:", error);
+            alert("Hubo un problema al intentar iniciar sesión.");
         }
-    }
+    };
     return(
         <div className="container login-container">
                 <div className="login-form-1">

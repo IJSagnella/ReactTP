@@ -2,8 +2,9 @@ import { Menu } from '../../components/Menu';
 import { Tabla } from '../../components/Tabla';
 import { useFetch } from '../../hooks/useFetch';
 
-export const Sucursales = () => {
 
+export const Sucursales = () => {
+    
     const columnas = [
         {"label": "Nombre", "db": "nombre"},
         {"label": "Codigo", "db": "codigo"},

@@ -1,11 +1,30 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
-import { useAuth } from './AuthContext';
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "./AuthContext";
+import { useState, useEffect } from "react";
 
-const PrivateRoute = ({ component: Component }) => {
-    const { logueado } = useAuth();
+const PrivateRoute = ({ rolRequerido }) => {
+    const { logueado, rol } = useAuth();
+    const [cargando, setCargando] = useState(true);
 
-    return logueado ? <Component /> : <Navigate to="/" />;
+    useEffect(() => {
+        if (logueado !== undefined) {
+            setCargando(false);
+        }
+    }, [logueado]);
+
+    if (cargando) {
+        return <div>Cargando...</div>; // Muestra un loading en lo que se valida la sesión
+    }
+
+    if (!logueado) {
+        return <Navigate to="/login" />;
+    }
+
+    if (rolRequerido && rol !== rolRequerido) {
+        return <Navigate to={rol === 1 ? "/admin" : "/empleado"} />;
+    }
+
+    return <Outlet />;
 };
 
 export default PrivateRoute;
