@@ -64,7 +64,7 @@ exports.login = async(req, res) => {
             res.status(404).json({ success: false, message: 'Credenciales incorrectas' });
         }else{
             //Información que se va a hashear.
-            const payload = { ID: empleado.id, nombre: empleado.nombre, rol:empleado.id_rol };
+            const payload = { ID: empleado.id, nombre: empleado.nombre, rol:empleado.id_rol, sucursal:empleado.id_sucursal };
             //Access token.
             const token = auth.generateToken(payload);
             res.json({

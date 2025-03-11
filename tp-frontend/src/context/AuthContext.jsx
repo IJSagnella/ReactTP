@@ -7,21 +7,25 @@ export const AuthProvider = ({ children }) => {
     const [logueado, setLogueado] = useState(false);
     const [rol, setRol] = useState(null);
     const [token, setToken] = useState(null);
+    const [sucursal, setSucursal] = useState(null);
     const navigate = useNavigate();
 
     // ✅ Almacenar en localStorage los datos de login
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         const storedRol = localStorage.getItem("rol");
+        const storedSucursal = localStorage.getItem("sucursal");
 
         if (storedToken && storedRol) {
             setLogueado(true);
             setRol(Number(storedRol));
             setToken(storedToken);
+            setSucursal(storedSucursal);
         } else {
             setLogueado(false);
             setRol(null);
             setToken(null);
+            setSucursal(null);
         }
     }, []);
 
@@ -44,9 +48,11 @@ export const AuthProvider = ({ children }) => {
             setLogueado(true);
             setRol(data.rol);
             setToken(data.token);
+            setSucursal(data.sucursal);
 
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.rol);
+            localStorage.setItem("sucursal", data.sucursal);
 
             return data;
         } catch (error) {
@@ -62,11 +68,12 @@ export const AuthProvider = ({ children }) => {
         setToken(null);
         localStorage.removeItem("token");
         localStorage.removeItem("rol");
+        localStorage.removeItem("sucursal");
         navigate("/login");
     };
 
     return (
-        <AuthContext.Provider value={{ logueado, login, logout, rol, token }}>
+        <AuthContext.Provider value={{ logueado, login, logout, rol, token, sucursal }}>
             {children}
         </AuthContext.Provider>
     );

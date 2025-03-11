@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 
 export const OrdenAlta = () => {
-    const { token } = useAuth();  // Obtener el token desde el contexto de autenticación
+    const { token, sucursal } = useAuth();  // Obtener el token desde el contexto de autenticación
 
-    const { data: sucursales } = useFetch("http://localhost:8888/sucursales"); 
-    
+
+    const { data: sucursales } = useFetch("http://localhost:8888/sucursales");
+
     const { data: categorias} = useFetch("http://localhost:8888/categorias");
 
     const provincias = [
@@ -40,7 +41,6 @@ export const OrdenAlta = () => {
     
 
     // Estado para cada campo
-  const [sucursal, setSucursal] = useState('');
   const [categoria, setCategoria] = useState('');
   const [producto, setProducto] = useState('');
   const [condicion, setCondicion] = useState('');
@@ -108,7 +108,6 @@ export const OrdenAlta = () => {
       }
 
     // Limpiar el formulario después de enviarlo
-    setSucursal('');
     setCategoria('');
     setProducto('');
     setCondicion('');
@@ -150,19 +149,20 @@ export const OrdenAlta = () => {
                                         <div className="row">
                                             <div className="col-6">
                                                 <label htmlFor="sucursal" className="form-label">Sucursal</label>
-                                                <select
-                                                    className="form-select"
-                                                    id="sucursal"
-                                                    value={sucursal}
-                                                    onChange={(e) => setSucursal(e.target.value)}
-                                                    required
-                                                >
-                                                    <option value="">Seleccione una Sucursal</option>
-                                                    { 
+                                                
+                                                {
                                                     sucursales?.map( (item, i) =>{
-                                                        return (<option key={i} value={item.id}> {item.nombre} </option>)
-                                                    })};
-                                                </select>    
+                                                    if (item.id == sucursal){
+                                                        return (<input
+                                                        key={i}
+                                                        type="text"
+                                                        className="form-control"
+                                                        id="sucursal"
+                                                        value={item.nombre}
+                                                        disabled
+                                                        />)
+                                                    }    
+                                                })}
                                             </div>
                                             <div className="col-6">
                                                 <label htmlFor="categoria" className="form-label">Categoria</label>

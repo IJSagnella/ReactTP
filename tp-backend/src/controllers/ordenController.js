@@ -1,8 +1,13 @@
 const ordenModel = require("../models/ordenModel");
 
 exports.index = async(req, res) => {
+    const {sucursal , rol} = req.user;
     try{
-        const results = await ordenModel.all();
+        if (rol == 1){
+            const results = await ordenModel.all();
+        }else{
+            const results = await ordenModel.bySucursal(sucursal);
+        }
         res.json({ success: true, results });
         console.log("Se mando lista de Ordenes");
     }catch(error){
@@ -13,8 +18,14 @@ exports.index = async(req, res) => {
 
 exports.store = async(req, res) => {
     const {id_sucursal, id_categoria, producto, condicion, serie, defecto, accesorios,marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente} = req.body;
+    const { sucursal } = req.user;
+
     try{
-        await ordenModel.create( {id_sucursal, id_categoria, producto, condicion, serie, defecto, accesorios,marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente} );
+        if(sucursal == 1){
+            await ordenModel.create( {id_sucursal, id_categoria, producto, condicion, serie, defecto, accesorios,marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente} );
+        }else{
+            await ordenModel.create( {sucursal, id_categoria, producto, condicion, serie, defecto, accesorios,marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente} );
+        }
         res.json({ success: true, message: 'La orden se ha creado correctamente'});
     }catch(error){
         console.log(error);
