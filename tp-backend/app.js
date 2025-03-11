@@ -30,6 +30,7 @@ app.use(require('./src/routes/eventoRoutes'));
 app.use(require('./src/routes/empleadoRoutes'));
 app.use(require('./src/routes/sucursalRoutes'));
 app.use(require('./src/routes/ordenRoutes'));
+app.use(require('./src/routes/categoriaRoutes'));
 
 //Conexión a la base de datos.
 const connection = require('./db');

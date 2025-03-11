@@ -61,7 +61,25 @@ exports.search = async(dni) => {
 
 exports.create = async( {id_sucursal, id_categoria, producto, condicion, serie, defecto, accesorios,marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente} ) => {
     const query = `
-        INSERT INTO orden(id_sucursal, id_categoria, producto, condicion, serie, defecto, id_estado, accesorios,f_creacion, marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente)
+        INSERT INTO orden(
+        id_sucursal, 
+        id_categoria, 
+        producto, 
+        condicion, 
+        serie, 
+        defecto, 
+        id_estado, 
+        accesorios,
+        f_creacion, 
+        marca, 
+        nombre_cliente, 
+        apellido_cliente, 
+        dni_cliente, 
+        localidad_cliente, 
+        direccion_cliente, 
+        telefono_cliente, 
+        email_cliente, 
+        provincia_cliente)
         VALUES(?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     try{

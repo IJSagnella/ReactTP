@@ -77,7 +77,7 @@ export const AdminOrdenInfo = () => {
                                             (data.id_estado === 6 || data.id_estado === 7) ? "text-bg-success" : 
                                             (data.id_estado === 3 || data.id_estado === 4 || data.id_estado === 5) ? "text-bg-warning" : 
                                             data.id_estado === 8 ? "text-bg-danger" :
-                                            "text-bg-secondary" // color por defecto
+                                            "text-bg-secondary" 
                                         }`}
                                     >
                                         {data.estado_nombre}
