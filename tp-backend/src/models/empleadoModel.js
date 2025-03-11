@@ -94,8 +94,11 @@ exports.getRol = async (id) => {
 
 exports.all = async() => {
     const query = `
-        SELECT id_sucursal, nombre, apellido, id_rol, dni, email, telefono, f_creacion
-        FROM empleado
+        SELECT e.id_sucursal, s.nombre AS nombre_sucursal, e.nombre, e.apellido, 
+        e.id_rol, r.descripcion AS nombre_rol, e.dni, e.email, e.telefono, e.f_creacion
+        FROM empleado e
+        INNER JOIN sucursal s ON e.id_sucursal = s.id
+        INNER JOIN rol r ON e.id_rol = r.id;
     `;
     try{
         [results] = await connection.query(query);

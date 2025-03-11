@@ -7,8 +7,8 @@ export const Empleados = () => {
     const columnas = [
         {"label": "Nombre", "db": "nombre"},
         {"label": "Apellido", "db": "apellido"},
-        {"label": "Rol", "db": "id_rol"},
-        {"label": "Sucursal", "db": "id_sucursal"},
+        {"label": "Rol", "db": "nombre_rol"},
+        {"label": "Sucursal", "db": "nombre_sucursal"},
         {"label": "Fecha de Alta", "db": "f_creacion"},
         {"label": "Correo Electronico", "db": "email"},
         {"label": "Teléfono", "db": "telefono"},

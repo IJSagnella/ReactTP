@@ -16,7 +16,7 @@ export const AdminOrdenes = () => {
                     <Menu />
                 </div>
                 <div className="col-9">
-                    <div className="row">
+                    <div className="row my-5">
                         <div className="col">
                             <h1>Ordenes de Servicio</h1>
                         </div>
