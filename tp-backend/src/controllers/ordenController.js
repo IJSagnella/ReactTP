@@ -25,11 +25,11 @@ exports.store = async(req, res) => {
 exports.show = async(req, res) => {
     const {ID} = req.params;
     try{
-        const result = await ordenModel.find(ID);
-        if(result == null){
+        const results = await ordenModel.find(ID);
+        if(results == null){
             res.status(404).json({ success: false, message: 'La orden no existe o ha dejado de existir' });
         }else{            
-            res.json({ success: true, result });
+            res.json({ success: true, results });
         }
     }catch(error){
         console.log(error);

@@ -73,9 +73,36 @@ exports.create = async( {id_sucursal, id_categoria, producto, condicion, serie, 
 
 exports.find = async(ID) => {
     const query = `
-        SELECT id, id_sucursal, id_categoria, producto, condicion, serie, defecto, id_estado, accesorios, reparacion, precio, f_creacion, marca, nombre_cliente, apellido_cliente, dni_cliente, localidad_cliente, direccion_cliente, telefono_cliente, email_cliente, provincia_cliente
-        FROM orden
-        WHERE id = ?
+        SELECT 
+            o.id, 
+            o.id_sucursal, 
+            s.nombre AS sucursal_nombre, 
+            o.id_categoria, 
+            c.codigo AS categoria_nombre, 
+            o.producto, 
+            o.condicion, 
+            o.serie, 
+            o.defecto, 
+            o.id_estado, 
+            e.descripcion AS estado_nombre, 
+            o.accesorios, 
+            o.reparacion, 
+            o.precio, 
+            o.f_creacion, 
+            o.marca, 
+            o.nombre_cliente, 
+            o.apellido_cliente, 
+            o.dni_cliente, 
+            o.localidad_cliente, 
+            o.direccion_cliente, 
+            o.telefono_cliente, 
+            o.email_cliente, 
+            o.provincia_cliente
+        FROM orden o
+        INNER JOIN sucursal s ON o.id_sucursal = s.id
+        INNER JOIN categoria c ON o.id_categoria = c.id
+        INNER JOIN estado_orden e ON o.id_estado = e.id
+        WHERE o.id = ?;
     `;
     try{
         [results] = await connection.query(query, [ID]);

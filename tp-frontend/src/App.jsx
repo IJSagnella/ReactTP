@@ -11,6 +11,7 @@ import { Sucursales } from './pages/admin/Sucursales'
 import { Empleados } from './pages/admin/Empleados'
 import { EmpleadosAlta } from './pages/admin/EmpleadosAlta'
 import { AdminOrdenes } from './pages/admin/AdminOrdenes'
+import { AdminOrdenInfo } from './pages/admin/AdminOrdenInfo'
 import { Ordenes } from './pages/empleado/Ordenes'
 import { OrdenInfo } from './pages/empleado/OrdenInfo'
 import { Resumen } from './pages/empleado/Resumen'
@@ -46,6 +47,7 @@ export const App = () => {
           <Route path= '/admin/empleados/alta' element={<EmpleadosAlta/>} />
           <Route path= '/admin/sucursales' element={<Sucursales/>} />
           <Route path= '/admin/ordenes' element={<AdminOrdenes/>} />
+          <Route path= '/admin/ordenes/:id' element={<AdminOrdenInfo/>} />
         </Route>
 
         <Route element={<PrivateRoute rolRequerido={2}/>}>
