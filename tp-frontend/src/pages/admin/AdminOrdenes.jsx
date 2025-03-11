@@ -30,7 +30,7 @@ export const AdminOrdenes = () => {
                                 data?.map( (e, i) =>{
                                     return (
                                         <div className="row" key={i}>
-                                            <CardOrden key={i} numero={e.id} estado={e.estado} producto={e.producto} sucursal={e.sucursal} nombre={e.nombre_cliente} apellido={e.apellido_cliente} creacion={e.f_creacion} url={"/admin/ordenes/"} />
+                                            <CardOrden key={i} numero={e.id} id_estado={e.id_estado} estado={e.estado} producto={e.producto} sucursal={e.sucursal} nombre={e.nombre_cliente} apellido={e.apellido_cliente} creacion={e.f_creacion} url={"/admin/ordenes/"} />
                                         </div>
                                         )})
                             }

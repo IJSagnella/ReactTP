@@ -2,11 +2,15 @@ import '../../css/OrdenInfo.css';
 import { Menu } from '../../components/Menu';
 import { useFetch } from '../../hooks/useFetch';
 import { useParams } from "react-router-dom";
+import { BotonAccionesOrden } from "../../components/BotonAccionesOrden";
+import { useAuth } from "../../context/AuthContext"; // Para obtener el token
 
 export const AdminOrdenInfo = () => {
     const { id } = useParams();
     const url = id ? `http://localhost:8888/ordenes/${id}` : null;
     const { data, loading } = useFetch(url);
+
+    const { token } = useAuth(); // Obtener el token desde el contexto
 
     if (id === null) return <p>No se encontró la orden</p>;
     if (loading) return <p>Cargando...</p>;
@@ -14,6 +18,28 @@ export const AdminOrdenInfo = () => {
 
     console.log("Datos de la API:", data);
     console.log("Componente montado");
+
+    const cambiarEstadoOrden = async (nuevoEstado) => {
+        try {
+            const response = await fetch(`http://localhost:8888/ordenes/${data.id}/estado`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({ id_estado: nuevoEstado }),
+            });
+    
+            if (!response.ok) {
+                throw new Error("Error al actualizar el estado");
+            }
+    
+            alert("Estado actualizado correctamente");
+            window.location.reload();
+        } catch (error) {
+            console.error("Error al cambiar el estado:", error);
+        }
+    };
 
     return (
         
@@ -43,8 +69,21 @@ export const AdminOrdenInfo = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col d-flex justify-content-center align-items-center">
-                                    <h2><span className="badge text-bg-success">{data.estado_nombre}</span></h2>
+                                <div className="col d-flex flex-column justify-content-center align-items-center">
+                                <h2>
+                                    <span
+                                        className={`badge ${
+                                            // Lógica para cambiar el color de la badge dependiendo del id_estado
+                                            (data.id_estado === 6 || data.id_estado === 7) ? "text-bg-success" : 
+                                            (data.id_estado === 3 || data.id_estado === 4 || data.id_estado === 5) ? "text-bg-warning" : 
+                                            data.id_estado === 8 ? "text-bg-danger" :
+                                            "text-bg-secondary" // color por defecto
+                                        }`}
+                                    >
+                                        {data.estado_nombre}
+                                    </span>
+                                </h2>
+                                    <BotonAccionesOrden estadoActual={data.id_estado} onChangeEstado={cambiarEstadoOrden} />
                                 </div>
                             </div>
 
@@ -63,6 +102,7 @@ export const AdminOrdenInfo = () => {
                                             <p className="card-text">Condición: {data.condicion}</p>
                                             <p className="card-text">Accesorios: {data.accesorios}</p>
                                             <p className="card-text">Defecto: {data.defecto}</p>
+                                            <p className="card-text">Precio de reparacion: ${data.precio}</p>
                                         </div>
                                     </div>
                                 </div>

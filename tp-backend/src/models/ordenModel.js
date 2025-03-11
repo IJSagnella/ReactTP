@@ -142,3 +142,16 @@ exports.update = async( {ID, id_sucursal, id_categoria, producto, condicion, ser
         throw error;
     }
 }
+
+exports.state = async( {ID, id_estado} ) => {
+    const query = `
+            UPDATE orden
+            SET id_estado = ?
+            WHERE id = ?
+    `;
+    try{
+        await connection.query(query, [id_estado, ID]);        
+    }catch(error){
+        throw error;
+    }
+}

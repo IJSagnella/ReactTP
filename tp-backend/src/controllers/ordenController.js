@@ -64,3 +64,15 @@ exports.update = async(req, res) => {
         res.status(500).json({ success: false, message: 'Error al intentar actualizar la orden' });
     }
 }
+
+exports.state = async(req, res) => {
+    const { ID } = req.params;
+    const { id_estado } = req.body;
+    try{
+        ordenModel.state( {ID, id_estado} );
+        res.json({ success: true, message: 'El estado de orden se actualizo correctamente'});
+    }catch(error){
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Error al intentar actualizar la orden' });
+    }
+}

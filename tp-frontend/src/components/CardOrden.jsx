@@ -1,6 +1,6 @@
 import '../css/Card.css';
 
-export const CardOrden = ({ numero, estado, producto, sucursal, nombre, apellido, creacion, url }) => {
+export const CardOrden = ({ numero,id_estado, estado, producto, sucursal, nombre, apellido, creacion, url }) => {
 
     return(
         <div className="col mb-4">
@@ -15,7 +15,16 @@ export const CardOrden = ({ numero, estado, producto, sucursal, nombre, apellido
                             { numero }
                             </div>
                             <div className='mb-0 font-weight-bold text-gray-800'>
-                                <span className="badge text-bg-success">{ estado }</span>
+                            <span
+                                    className={`badge ${
+                                        (id_estado === 6 || id_estado === 7) ? "text-bg-success" : 
+                                        (id_estado === 3 || id_estado === 4 || id_estado === 5) ? "text-bg-warning" : 
+                                        id_estado === 8 ? "text-bg-danger" :
+                                        "text-bg-secondary" 
+                                    }`}
+                                >
+                                    {estado}
+                                </span>
                             </div>
                         </div>
                         <div className="col">
@@ -60,7 +69,6 @@ export const CardOrden = ({ numero, estado, producto, sucursal, nombre, apellido
                         </div>
                         <div className="col">
                             <a className="btn btn-primary mb-3" href={ url + numero } role="button">Ver Orden</a>
-                            <button className="btn btn-danger" type="button">Cancelar</button>
                         </div>
                     </div>
                 </div>
