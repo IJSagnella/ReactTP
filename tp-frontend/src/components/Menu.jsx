@@ -15,6 +15,7 @@ export const Menu = () => {
             {rol === 1 && (
                 <>
                     <a className='list-group-item list-group-item-action text-start' href="/admin">Resumen</a>
+                    <a className='list-group-item list-group-item-action text-start' href="/admin/ordenes/alta">Nueva Orden de Servicio</a>
                     <a className='list-group-item list-group-item-action text-start' href="/admin/ordenes">Órdenes de Servicio</a>
                     <a className='list-group-item list-group-item-action text-start' href="/admin/sucursales">Sucursales</a>
                     <a className='list-group-item list-group-item-action text-start' href="/admin/empleados">Empleados</a>
