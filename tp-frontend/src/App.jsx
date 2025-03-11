@@ -16,8 +16,7 @@ import { AdminOrdenAlta } from './pages/admin/AdminOrdenAlta'
 import { Ordenes } from './pages/empleado/Ordenes'
 import { OrdenInfo } from './pages/empleado/OrdenInfo'
 import { Resumen } from './pages/empleado/Resumen'
-import { Pedidos } from './pages/empleado/Pedidos'
-import { Envios } from './pages/empleado/Envios'
+
 
 //Menu
 
@@ -56,8 +55,6 @@ export const App = () => {
           <Route path= '/empleado/ordenes' element={<Ordenes/>} />
           <Route path= '/empleado/ordenes/:id' element={<OrdenInfo/>} />
           <Route path= '/empleado' element={<Resumen/>} />
-          <Route path= '/empleado/pedidos' element={<Pedidos/>} />
-          <Route path= '/empleado/envios' element={<Envios/>} />
         </Route>
 
       </Routes>
