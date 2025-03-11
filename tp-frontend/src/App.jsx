@@ -15,6 +15,7 @@ import { AdminOrdenInfo } from './pages/admin/AdminOrdenInfo'
 import { AdminOrdenAlta } from './pages/admin/AdminOrdenAlta'
 import { Ordenes } from './pages/empleado/Ordenes'
 import { OrdenInfo } from './pages/empleado/OrdenInfo'
+import { OrdenAlta } from './pages/empleado/OrdenAlta';
 import { Resumen } from './pages/empleado/Resumen'
 
 
@@ -53,6 +54,7 @@ export const App = () => {
 
         <Route element={<PrivateRoute rolRequerido={2}/>}>
           <Route path= '/empleado/ordenes' element={<Ordenes/>} />
+          <Route path= '/empleado/ordenes/alta' element={<OrdenAlta/>} />
           <Route path= '/empleado/ordenes/:id' element={<OrdenInfo/>} />
           <Route path= '/empleado' element={<Resumen/>} />
         </Route>

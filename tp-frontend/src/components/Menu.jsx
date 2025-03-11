@@ -10,6 +10,7 @@ export const Menu = () => {
                 <>
                     <a className='list-group-item list-group-item-action text-start' href="/empleado">Resumen</a>
                     <a className='list-group-item list-group-item-action text-start' href="/empleado/ordenes">Órdenes de Servicio</a>
+                    <a className='list-group-item list-group-item-action text-start' href="/empleado/ordenes/alta">Nueva Orden de Servicio</a>
                 </>
             )}
             {rol === 1 && (

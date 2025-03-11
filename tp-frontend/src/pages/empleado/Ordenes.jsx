@@ -7,7 +7,7 @@ import { useFetch } from '../../hooks/useFetch';
 export const Ordenes = () => {
 
     const { data, loading } = useFetch("http://localhost:8888/ordenes");   
-    
+    console.log(data);
 
     return(
         <div className='container-fluid min-vh-100'>
@@ -16,7 +16,7 @@ export const Ordenes = () => {
                     <Menu />
                 </div>
                 <div className="col-9">
-                    <div className="row">
+                    <div className="row my-5">
                         <div className="col">
                             <h1>Ordenes de Servicio</h1>
                         </div>
@@ -30,7 +30,7 @@ export const Ordenes = () => {
                                 data?.map( (e, i) =>{
                                     return (
                                         <div className="row" key={i}>
-                                            <CardOrden key={i} numero={e.id} estado={e.estado} producto={e.producto} sucursal={e.sucursal} nombre={e.nombre_cliente} apellido={e.apellido_cliente} creacion={e.f_creacion} url={"/empleado/ordenes/"} />
+                                            <CardOrden key={i} numero={e.id} id_estado={e.id_estado} estado={e.estado} producto={e.producto} sucursal={e.sucursal} nombre={e.nombre_cliente} apellido={e.apellido_cliente} creacion={e.f_creacion} url={"/admin/ordenes/"} />
                                         </div>
                                         )})
                             }
